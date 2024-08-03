@@ -69,7 +69,10 @@ export default function Datatable() {
   ];
   return (
     <div id="dashboard-sectionA-body" className="datatable-sectionA-body">
-      <div className="dashboard-charts-box datatable-sectionA-table">
+      <div
+        className="dashboard-charts-box datatable-sectionA-table"
+        style={{ height: "auto" }}
+      >
         <h1 id="datatable-sectionA-header">
           Accepted Invites and depositors INFO
         </h1>

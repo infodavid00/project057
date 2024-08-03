@@ -60,6 +60,7 @@
   width: 49%;
   border-radius: 15px;
   padding: 0.4em 1.4em;
+  height: 20em;
 }
 #dashboard-charts2-btn:hover {
   background-color: rgba(81, 60, 102, 1);
@@ -147,6 +148,7 @@
 .dashboard-charts-box-scrollable {
   max-height: 28em;
   overflow-y: auto;
+  height: auto;
 }
 .dashboard-charts-box-scrollable::-webkit-scrollbar {
   background-color: transparent;
@@ -245,6 +247,7 @@
 }
 .dashboard-charts-box {
   width: 100%;
+  height: auto;
 }
 .dashboard-news-body div {
   font-size: 13px;
