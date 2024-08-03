@@ -26,3 +26,14 @@
   border-bottom: 1px solid #444;
   color: #aaa;
 }
+#datatable-sectionA-table-container td {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.5s forwards;
+}
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
