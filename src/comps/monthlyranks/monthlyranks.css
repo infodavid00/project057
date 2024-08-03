@@ -48,8 +48,57 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2), 0px 0px 20px rgba(0, 0, 0, 0.1);
   width: 23.7%;
   cursor: pointer;
-  transition: 0.1s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
 }
+.monthlyranks-card:hover {
+  background-color: rgba(61, 30, 72, 1);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3), 0px 5px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px) scale(1.03);
+}
+.monthlyranks-card:nth-child(1) {
+  animation-delay: 0s;
+}
+.monthlyranks-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.monthlyranks-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.monthlyranks-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.monthlyranks-card:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.monthlyranks-card:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.monthlyranks-card:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.monthlyranks-card:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.monthlyranks-card:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.monthlyranks-card:nth-child(10) {
+  animation-delay: 0.9s;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#monthlyranks-cards-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .monthlyranks-card-index {
   display: flex;
   justify-content: flex-end;
@@ -59,7 +108,34 @@
   border-radius: 0px 10px 0px 10px;
   background-color: rgba(31, 0, 42, 0.5);
   color: white;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
+.monthlyranks-card-index-btn::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg,
+      rgba(31, 0, 42, 0.8),
+      rgba(35, 3, 50, 0.8),
+      rgba(31, 0, 42, 0.8),
+      rgba(40, 7, 60, 0.8));
+  z-index: -1;
+  animation: swipe 1s infinite linear;
+}
+@keyframes swipe {
+  0% {
+    transform: translate(-100%, -100%);
+  }
+  100% {
+    transform: translate(100%, 100%);
+  }
+}
+
 .monthlyranks-card-padded {
   padding: 2em 1.5em;
 }
