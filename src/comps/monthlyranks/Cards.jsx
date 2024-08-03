@@ -3,51 +3,61 @@ import "./monthlyranks.css";
 export default function Cards() {
   const cards = [
     {
+      index: "1st",
       title: "Abstract Colors",
       name: "Jane Doe",
       digit: "0.90 ETH",
     },
     {
+      index: "2nd",
       title: "Vintage Home",
       name: "Alice Smith",
       digit: "1.25 ETH",
     },
     {
+      index: "3rd",
       title: "Modern Art",
       name: "Bob Johnson",
       digit: "2.10 ETH",
     },
     {
+      index: "4th",
       title: "Sunset Views",
       name: "Carol White",
       digit: "0.75 ETH",
     },
     {
+      index: "5th",
       title: "City Lights",
       name: "David Brown",
       digit: "1.85 ETH",
     },
     {
+      index: "6st",
       title: "Ocean Breeze",
       name: "Emma Davis",
       digit: "1.00 ETH",
     },
     {
+      index: "7th",
       title: "Dreamy Forest",
       name: "Frank Wilson",
       digit: "0.65 ETH",
     },
     {
+      index: "8th",
       title: "Starry Night",
       name: "Grace Lee",
       digit: "2.50 ETH",
     },
     {
+      index: "9th",
       title: "Futuristic Vision",
       name: "Hannah Martinez",
       digit: "3.00 ETH",
     },
     {
+      index: "10th",
       title: "Modern Art",
       name: "Bob Johnson",
       digit: "2.10 ETH",
@@ -59,7 +69,7 @@ export default function Cards() {
       {cards.map((element, index) => (
         <div key={index} className="monthlyranks-card">
           <div className="monthlyranks-card-index">
-            <div className="monthlyranks-card-index-btn">{index + 1}</div>
+            <div className="monthlyranks-card-index-btn">{element.index}</div>
           </div>
           <div className="monthlyranks-card-padded">
             <h1 className="monthlyranks-card-title">{element.title}</h1>
