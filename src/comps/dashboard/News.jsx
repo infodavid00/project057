@@ -126,6 +126,7 @@ export default function News() {
               <X
                 strokeWidth={1}
                 color="white"
+                style={{ cursor: "pointer" }}
                 onClick={() => shouldpreviewNews(1)}
               />
             </div>
