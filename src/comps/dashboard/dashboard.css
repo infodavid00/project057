@@ -67,6 +67,10 @@
   border-radius: 15px;
   padding: 0.4em 1.4em;
   height: 20em;
+  overflow-y: auto;
+}
+.dashboard-charts-box::-webkit-scrollbar {
+  display: none;
 }
 #dashboard-charts2-btn:hover {
   background-color: rgba(30,30,32,1);

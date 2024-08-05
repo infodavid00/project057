@@ -109,6 +109,10 @@
   font-family: "poppins-semibold", sans-serif;
   font-size: 30px;
   color: var(--color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .monthlyranks-card-name {
   font-family: "poppins", sans-serif;
@@ -121,16 +125,56 @@
   color: var(--color);
 }
 .monthlyranks-card-footer-btn {
-  border-radius: 30px;
+  /* border-radius: 30px;
   border: none;
   outline: none;
   padding: 10px 1.6em;
-  background-color: #9300FE ;
   font-size: 14px;
   color: var(--color);
   font-family: "poppins-semibold", sans-serif;
-  margin-top: 1em;
+  margin-top: 1em; */
 }
+
+.monthlyranks-card-footer-btn {
+  padding: 15px 30px;
+  border: 2px solid #2c2c2c;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+}
+.monthlyranks-card-footer-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+.monthlyranks-card-footer-btn:hover::after {
+  transform: scale(4);
+}
+.monthlyranks-card-footer-btn:hover {
+  border-color: #666666;
+  background: #292929;
+}
+
+
+
+
 .monthlyranks-card-catalog {
   margin-top: 0.8em;
   margin-bottom: 2em;

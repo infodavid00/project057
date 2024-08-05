@@ -6,50 +6,42 @@ export default function Cards() {
   const [preview, shouldpreview] = useState("");
   const cards = [
     {
-      tag: 0,
       item: "$30 USD",
       points: "5k",
       exp: "10 Aug 2024",
     },
     {
-      tag: 1,
       item: "iPhone 14 Pro",
       points: "30k",
       exp: "15 Sep 2024",
     },
     {
-      tag: 1,
-      item: "$15 EURO",
+      item: "€15 EURO",
       points: "2k",
       exp: "30 Sep 2024",
     },
     {
-      tag: 0,
       item: "$70 USD",
       points: "9k",
       exp: "10 Sep 2024",
     },
     {
-      tag: 2,
-      item: "$50 STEAM CARD + $10 USD",
+      item: "€50 STEAM CARD",
       points: "10k",
       exp: "20 Jul 2024",
     },
     {
-      tag: 3,
-      item: "Samsung Galaxy S23",
+      item: "Iphone XR",
       points: "40k",
       exp: "05 Oct 2024",
     },
     {
-      tag: 0,
-      item: "PlayStation 5 Console",
+      item: "PlayStation 5",
       points: "45k",
       exp: "01 Aug 2024",
     },
     {
-      tag: 2,
-      item: "$20 USD + $10 Amazon Gift Card",
+      item: "€10 EURO",
       points: "8k",
       exp: "12 Aug 2024",
     }
@@ -59,34 +51,12 @@ export default function Cards() {
     <>
       <div id="monthlyranks-cards-body">
         {cards.map((element, index) => (
-          <div key={index} className="bonus-card">
-            {/*<div className="monthlyranks-card-index">
-              <div
-                className={`bonus-card-index-btn ${
-                  element.tag === 0
-                    ? "bonus-card-index-btn-flashsale"
-                    : element.tag === 3
-                    ? "bonus-card-index-btn-hotdeal"
-                    : element.tag === 2
-                    ? "bonus-card-index-btn-bundledeal"
-                    : ""
-                }`}
-              >
-                {element.tag === 0
-                  ? "Flash Sale"
-                  : element.tag === 3
-                  ? "Hot Deal"
-                  : element.tag === 2
-                  ? "Bundle Deal"
-                  : "Bonus"}
-              </div>
-            </div>*/}
-            {/* ... */}
+          <div key={index} className="monthlyranks-card">
             <div className="bonus-card-padded">
-              <h1 className="monthlyranks-card-title">{element.item}</h1>
-              <div className="monthlyranks-card-name">
-                {element.points} Points
-              </div>
+              <h1 className="monthlyranks-card-title">
+                {element.item} - 
+                <div className="monthlyranks-card-name">{element.points} Points</div>
+              </h1>
               {/* section1 */}
               <div style={{ marginTop: "1em" }}>
                 <div className="monthlyranks-card-footer-text">

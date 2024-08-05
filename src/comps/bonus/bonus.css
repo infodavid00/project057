@@ -55,53 +55,8 @@
   margin-left: 4px;
 }
 
-
-
-.bonus-card {
-  border-radius: 10px;
-  background-color: rgba(25,25,27,1);
-  box-shadow: var(--box-shadow);
-  width: 49%;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.5s forwards;
-}
 .bonus-card-padded {
    padding: 1.3em 1.5em 2em 1.5em;
-}
-.bonus-card-index-btn {
-  padding: 1em 2em;
-  border-radius: 0px 10px 0px 10px;
-  background-color: rgba(31, 0, 42, 0.5);
-  color: white;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-@keyframes swipe {
-  0% {
-    transform: translate(-100%, -100%);
-  }
-  100% {
-    transform: translate(100%, 100%);
-  }
-}
-.bonus-card-index-btn::before {
-  content: "";
-  position: absolute;
-  top: -100%;
-  left: -100%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(135deg,
-      rgba(31, 0, 42, 0.8),
-      rgba(35, 3, 50, 0.8),
-      rgba(31, 0, 42, 0.8),
-      rgba(40, 7, 60, 0.8));
-  z-index: -1;
-  animation: swipe 1s infinite linear;
 }
  
 #bonus-preview-cont {
@@ -161,9 +116,6 @@
 }
 #bonus-banner-section1-text {
  font-size: 12px;
-}
-.bonus-card {
-  width: 100%;
 }
 #bonus-preview-cont {
   width: 90%;

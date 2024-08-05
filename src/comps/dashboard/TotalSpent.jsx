@@ -41,7 +41,7 @@ export default function TotalSpent(props) {
       mb="0px"
       {...rest}
     >
-      <Flex justify="space-between" ps="0px" pe="20px" pt="5px">
+      <Flex justify="space-between" ps="0px" pe="0px" pt="5px">
         <Flex align="center" w="100%">
           <Button
             bg={"rgba(40,40,42,1)"}
@@ -117,7 +117,7 @@ export default function TotalSpent(props) {
             </Text>
           </Flex>
         </Flex>
-        <Box minH="260px" minW="75%" mt="auto">
+        <Box minH="260px" minW="70%" mt="auto">
           <LineChart
             chartData={lineChartDataTotalSpent}
             chartOptions={lineChartOptionsTotalSpent}
