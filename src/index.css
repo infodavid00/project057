@@ -24,9 +24,11 @@
 
   color-scheme: light dark;
   color: #28dfc5;
-  background-color: #1F002A;
-  --background-color: #1F002A;
+  --color: #28dfc5;
+  background-color: #101113;
+  --background-color: #101113;
   --panel-color: #0F0015;
+  --card-color: rgba(25,25,27,1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

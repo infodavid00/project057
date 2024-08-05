@@ -9,14 +9,36 @@ import {
   X,
   Gift,
 } from "react-feather";
+import Telegram from "../../assets/svgs/telegram-svgrepo-com.svg"
+import Twitter from "../../assets/svgs/twitter-svgrepo-com.svg"
+import Facebook from "../../assets/svgs/facebook-svgrepo-com.svg"
+import Youtube from "../../assets/svgs/youtube-svgrepo-com.svg"
 
 export default function Sidepanel({
   active,
   showNavigation,
   shouldShowNavigation,
 }) {
+  const FOOTERLINKS = [
+    {
+       svg: Telegram,
+       redirectTo: "https://www.telegram.com"
+    },
+    {
+       svg: Twitter,
+       redirectTo: "https://x.com"
+    },
+    {
+       svg: Facebook,
+       redirectTo: "https://www.facebook.com"
+    },
+    {
+       svg: Youtube,
+       redirectTo: "https://www.youtube.com"
+    }
+  ]
   const shouldFillIccon = (index) =>
-    index === active ? "white" : "transparent";
+    index === active ? "var(--color)" : "transparent";
   const links = [
     {
       icon: <Home fill={shouldFillIccon(1)} />,
@@ -58,7 +80,7 @@ export default function Sidepanel({
           onClick={() => shouldShowNavigation(false)}
         />
         <Link id="sidepanel-logo" to="/">
-          WOLFX ACADEMY
+          WOLFX ACADEMY 
         </Link>
       </h2>
       <div id="sidepanel-links-holder">
@@ -74,6 +96,19 @@ export default function Sidepanel({
             </Link>
           </div>
         ))}
+      </div>
+
+      <div id="sidepanel-footer">
+        <div id="sidepanel-footer-iconcont"> 
+            {FOOTERLINKS.map((element, index)=> (
+               <img 
+                 src={element.svg} 
+                 key={index} 
+                 onClick={()=> window.location.href = element.redirectTo}
+               />
+            ))}
+        </div>
+        <div id="sidepanel-footer-text">© WOLFX Academy Copyright</div>
       </div>
     </div>
   );
