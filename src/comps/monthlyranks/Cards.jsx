@@ -1,83 +1,92 @@
 import "./monthlyranks.css";
 
 export default function Cards() {
+  const uname = "Bob Johnson"
   const cards = [
     {
-      index: "1st",
-      title: "Abstract Colors",
       name: "Jane Doe",
-      digit: "0.90 ETH",
+      deposits: 320,
+      points: "10K"
     },
     {
-      index: "2nd",
-      title: "Vintage Home",
       name: "Alice Smith",
-      digit: "1.25 ETH",
+      deposits: 315,
+      points: "9.6K"
     },
     {
-      index: "3rd",
-      title: "Modern Art",
       name: "Bob Johnson",
-      digit: "2.10 ETH",
+      deposits: 298,
+      points: "7.2K"
     },
     {
-      index: "4th",
-      title: "Sunset Views",
       name: "Carol White",
-      digit: "0.75 ETH",
+      deposits: 278,
+      points: "6.8K"
     },
     {
-      index: "5th",
-      title: "City Lights",
       name: "David Brown",
-      digit: "1.85 ETH",
+      deposits: 245,
+      points: "5.0K"
     },
     {
-      index: "6st",
-      title: "Ocean Breeze",
       name: "Emma Davis",
-      digit: "1.00 ETH",
+      deposits: 203,
+      points: "4.9K"
     },
     {
-      index: "7th",
-      title: "Dreamy Forest",
       name: "Frank Wilson",
-      digit: "0.65 ETH",
+      deposits: 197,
+      points: "3.6K"
     },
     {
-      index: "8th",
-      title: "Starry Night",
-      name: "Grace Lee",
-      digit: "2.50 ETH",
+      name: "Starry Night",
+      deposits: 156,
+      points: "2.6K"
     },
     {
-      index: "9th",
-      title: "Futuristic Vision",
       name: "Hannah Martinez",
-      digit: "3.00 ETH",
+      deposits: 107,
+      points: "2.1K"
     },
     {
-      index: "10th",
-      title: "Modern Art",
       name: "Bob Johnson",
-      digit: "2.10 ETH",
+      deposits: 96,
+      points: "1.6K"
     },
   ];
 
   return (
     <div id="monthlyranks-cards-body">
       {cards.map((element, index) => (
-        <div key={index} className="monthlyranks-card">
+        <div key={index} className={
+           element.name === uname ? "monthlyranks-card monthlyranks-isUser-card" : "monthlyranks-card"
+          }>
+          {/*<div> 
+            <h1>{index + 1} </h1>
+          </div>*/}
           <div className="monthlyranks-card-padded">
+            <h1 className="monthlyranks-card-title">{index + 1} -  {element.name} </h1>
+            {/*
             <h1 className="monthlyranks-card-title">
               {"Jane .M. Doe"} - 
-              <div className="monthlyranks-card-name">{"102"} Deposists</div>
+              <div className="monthlyranks-card-name">{element.deposits} Deposits</div>
             </h1>
+            */}
             {/* section1 */}
+
             <div style={{ marginTop: "1em" }}>
+              <div className="monthlyranks-card-footer-text" style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 10
+              }}> <div className="monthlyranks-card-name">{element.deposits} Deposits - </div>
+               <span style={{ fontSize: 18 }}> {element.points} Points </span>
+              </div>
+              {/*  
               <div className="monthlyranks-card-footer-text">
                943 Points
               </div>
+              */}
               <button className="monthlyranks-card-footer-btn">Swap</button>
             </div>
             {/* section2 */}

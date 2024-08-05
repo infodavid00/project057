@@ -57,6 +57,35 @@
   background-color: rgba(40,40,42,1);
   transform: translateY(-10px) scale(1.03);
 }
+.monthlyranks-isUser-card {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: rgba(55, 55, 57, 1);
+}
+@keyframes swipe {
+  0% {
+    transform: translate(-100%, -100%);
+  }
+  100% {
+    transform: translate(100%, 100%);
+  }
+}
+.monthlyranks-isUser-card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg,
+      rgba(55, 55, 57, 0.8),
+      rgba(61, 61, 67, 0.8),
+      rgba(6, 6, 8, 0.8),
+      rgba(62, 62, 64, 0.8));
+  z-index: -1;
+  animation: swipe 1s infinite linear;
+}
 .monthlyranks-card:nth-child(1) {
   animation-delay: 0s;
 }
