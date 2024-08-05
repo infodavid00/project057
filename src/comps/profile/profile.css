@@ -8,7 +8,8 @@
 }
 
 #profile-info-cont {
-  background-color: rgba(51, 20, 62, 1);
+  background-color: rgba(25,25,27,1);
+  box-shadow: var(--box-shadow);
   width: 40%;
   border-radius: 15px;
   padding: 0.4em 1.4em;
@@ -25,7 +26,7 @@
   padding: 8px 1.2em;
   border: none;
   outline: none;
-  background-color: #3D10E9;
+  background-color: rgba(60,60,62,1);
   border-radius: 30px;
 }
 #profile-info-image-container {
@@ -40,8 +41,7 @@
   background-color: #ccc;
   border-radius: 50%;
   border: 1px solid #555;
-  box-shadow: 
-   0px 0px 20px rgba(200, 200, 200, 0.4), 0px 0px 10px rgba(200, 200, 200, 0.2);
+  box-shadow: var(--box-shadow);
 }
 #profile-info-image-editbtn {
   display: flex;
@@ -49,7 +49,6 @@
   justify-content: center;
   width: 30px;
   height: 30px;
-  background-color: #ccc;
   border-radius: 50%;
   margin-left: -1.5em;
   margin-top: 3.3em;
@@ -61,8 +60,8 @@
   font-size: 21px;
   text-align: center;
   font-family: 'helvetica', sans-serif;
-  color: white;
   margin-top: 0.6em;
+  color: var(--color);
 }
 .profile-info-metainfo {
   font-family: 'poppins', sans-serif;
@@ -82,12 +81,13 @@
   font-size: 21px;
   text-align: center;
   font-family: 'helvetica', sans-serif;
-  color: white;
+  color: var(--color);
 }
 
 .profile-passwordspace {
   width: 55%;
-  background-color: rgba(51, 20, 62, 1);
+  background-color: rgba(25,25,27,1);
+  box-shadow: var(--box-shadow);
   border-radius: 15px;
   padding: 0.4em 1.4em;
 }

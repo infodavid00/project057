@@ -68,16 +68,17 @@ export default function Cards() {
     <div id="monthlyranks-cards-body">
       {cards.map((element, index) => (
         <div key={index} className="monthlyranks-card">
-          <div className="monthlyranks-card-index">
-            <div className="monthlyranks-card-index-btn">{element.index}</div>
-          </div>
           <div className="monthlyranks-card-padded">
-            <h1 className="monthlyranks-card-title">{element.title}</h1>
-            <div className="monthlyranks-card-name">By {element.name}</div>
+            <h1 className="monthlyranks-card-title" style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10
+            }}>{"Jane .M. Doe"} - <div className="monthlyranks-card-name">{"102"} Deposists</div></h1>
+            {/*<div className="monthlyranks-card-name">{"102"} Deposists</div>*/}
             {/* section1 */}
             <div style={{ marginTop: "1em" }}>
               <div className="monthlyranks-card-footer-text">
-                Current Bid: {element.digit}
+               943 Points
               </div>
               <button className="monthlyranks-card-footer-btn">Swap</button>
             </div>
