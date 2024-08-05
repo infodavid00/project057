@@ -44,7 +44,7 @@ export default function TotalSpent(props) {
       <Flex justify="space-between" ps="0px" pe="20px" pt="5px">
         <Flex align="center" w="100%">
           <Button
-            bg={"rgba(71, 50, 92, 1)"}
+            bg={"rgba(40,40,42,1)"}
             fontSize="sm"
             fontWeight="500"
             color={textColorSecondary}
