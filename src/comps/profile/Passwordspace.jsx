@@ -15,7 +15,7 @@ export default function Passwordspace() {
         {/* names input */}
         <div className="auth-inputcontainer">
           <div className="auth-input-title">
-            Current Password<span style={{ color: "blue" }}>*</span>
+            Current Password<span>*</span>
           </div>
           <div
             className="auth-inputcontainer-outer"
@@ -50,7 +50,7 @@ export default function Passwordspace() {
 
         <div className="auth-inputcontainer">
           <div className="auth-input-title">
-            New password<span style={{ color: "blue" }}>*</span>
+            New password<span>*</span>
           </div>
           <div
             className="auth-inputcontainer-outer"
@@ -73,8 +73,6 @@ export default function Passwordspace() {
           style={{
             width: "100% ",
             marginTop: "1em",
-            boxShadow: "none",
-            backgroundColor: "#3D10E9",
           }}
         >
           Change

@@ -26,7 +26,7 @@ export default function Signup() {
               style={{ marginBottom: "-1em", width: "45%" }}
             >
               <div className="auth-input-title">
-                First Name<span style={{ color: "blue" }}>*</span>
+                First Name<span>*</span>
               </div>
               <div className="auth-inputcontainer-outer">
                 <input type="text" placeholder="Jane" autoComplete="off" />
@@ -37,7 +37,7 @@ export default function Signup() {
               style={{ marginBottom: "-1em", width: "45%" }}
             >
               <div className="auth-input-title">
-                Last Name<span style={{ color: "blue" }}>*</span>
+                Last Name<span>*</span>
               </div>
               <div className="auth-inputcontainer-outer">
                 <input type="text" placeholder="Doe" autoComplete="off" />
@@ -47,7 +47,7 @@ export default function Signup() {
           {/* names */}
           <div className="auth-inputcontainer" style={{ marginTop: "2em" }}>
             <div className="auth-input-title">
-              Email<span style={{ color: "blue" }}>*</span>
+              Email<span>*</span>
             </div>
             <div className="auth-inputcontainer-outer">
               <input
@@ -60,7 +60,7 @@ export default function Signup() {
           {/* email */}
           <div className="auth-inputcontainer">
             <div className="auth-input-title">
-              Password <span style={{ color: "blue" }}>*</span>
+              Password <span>*</span>
             </div>
             <div
               className="auth-inputcontainer-outer"

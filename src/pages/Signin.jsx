@@ -26,7 +26,7 @@ export default function Signin() {
           <div id="auth-title">Sign IN</div>
           <div className="auth-inputcontainer" style={{ marginTop: "2em" }}>
             <div className="auth-input-title">
-              Email<span style={{ color: "blue" }}>*</span>
+              Email<span>*</span>
             </div>
             <div className="auth-inputcontainer-outer">
               <input
@@ -38,7 +38,7 @@ export default function Signin() {
           </div>
           <div className="auth-inputcontainer">
             <div className="auth-input-title">
-              Password <span style={{ color: "blue" }}>*</span>
+              Password <span>*</span>
             </div>
             <div
               className="auth-inputcontainer-outer"
