@@ -43,9 +43,9 @@
   width: 96%;
 }
 .monthlyranks-card {
-  background-color: rgba(51, 20, 62, 1);
   border-radius: 10px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2), 0px 0px 20px rgba(0, 0, 0, 0.1);
+  background-color: rgba(25,25,27,1);
+  box-shadow: var(--box-shadow);
   width: 23.7%;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
@@ -54,8 +54,7 @@
   animation: fadeInUp 0.5s forwards;
 }
 .monthlyranks-card:hover {
-  background-color: rgba(61, 30, 72, 1);
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3), 0px 5px 25px rgba(0, 0, 0, 0.2);
+  background-color: rgba(40,40,42,1);
   transform: translateY(-10px) scale(1.03);
 }
 .monthlyranks-card:nth-child(1) {
@@ -107,7 +106,7 @@
   padding: 1em 2em;
   border-radius: 0px 10px 0px 10px;
   background-color: rgba(31, 0, 42, 0.5);
-  color: white;
+  color: var(--color);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -146,7 +145,7 @@
 .monthlyranks-card-title {
   font-family: "helvetica", sans-serif;
   font-size: 22px;
-  color: white;
+  color: var(--color);
 }
 .monthlyranks-card-name {
   font-family: "poppins", sans-serif;
@@ -156,7 +155,7 @@
 .monthlyranks-card-footer-text {
   font-size: 14px;
   font-family: "poppins-semibold", sans-serif;
-  color: white;
+  color: var(--color);
 }
 .monthlyranks-card-footer-btn {
   border-radius: 30px;
@@ -165,8 +164,8 @@
   padding: 10px 1.6em;
   background-color: #9300FE ;
   font-size: 14px;
-  color: white;
-  font-family: "poppins", sans-serif;
+  color: var(--color);
+  font-family: "poppins-semibold", sans-serif;
   margin-top: 1em;
 }
 .monthlyranks-card-catalog {
@@ -177,7 +176,6 @@
   width: 30px;
   height: 30px;
   background-color: #ccc;
-  border: none;
   outline: none;
   border-radius: 50%;
   border: 1px solid #777;
@@ -199,7 +197,7 @@
 }
 #monthlyranks-banner-section1-title {
   font-size: 20px;
-  color: white;
+  color:var(--color);
   font-weight: 800;
   font-family: "helvatica", sans-serif;
 }

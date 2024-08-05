@@ -4,7 +4,6 @@ import "./bonus.css";
 
 export default function Cards() {
   const [preview, shouldpreview] = useState("");
-  // Flash Sale, New offer, Bundle Deal, Hot Deal
   const cards = [
     {
       tag: 0,
@@ -53,39 +52,15 @@ export default function Cards() {
       item: "$20 USD + $10 Amazon Gift Card",
       points: "8k",
       exp: "12 Aug 2024",
-    },
-    {
-      tag: 3,
-      item: "Dell XPS 13 Laptop",
-      points: "50k",
-      exp: "28 Sep 2024",
-    },
-    {
-      tag: 3,
-      item: "GoPro HERO10 Black",
-      points: "38k",
-      exp: "04 Oct 2024",
-    },
-    {
-      tag: 1,
-      item: "Nintendo Switch OLED",
-      points: "25k",
-      exp: "18 Oct 2024",
-    },
-    {
-      tag: 2,
-      item: "4k TV + $50 Netflix Gift Card",
-      points: "35k",
-      exp: "23 Sep 2024",
-    },
+    }
   ];
 
   return (
     <>
       <div id="monthlyranks-cards-body">
         {cards.map((element, index) => (
-          <div key={index} className="monthlyranks-card">
-            <div className="monthlyranks-card-index">
+          <div key={index} className="bonus-card">
+            {/*<div className="monthlyranks-card-index">
               <div
                 className={`bonus-card-index-btn ${
                   element.tag === 0
@@ -105,7 +80,7 @@ export default function Cards() {
                   ? "Bundle Deal"
                   : "Bonus"}
               </div>
-            </div>
+            </div>*/}
             {/* ... */}
             <div className="bonus-card-padded">
               <h1 className="monthlyranks-card-title">{element.item}</h1>
@@ -141,7 +116,7 @@ export default function Cards() {
           >
             <div id="dashboard-news-preview-header">
               <div>
-                <span style={{ color: "white" }}>
+                <span style={{ color: "var(--color)" }}>
                   4k TV + $50 Netflix Gift Card{" "}
                 </span>
                 <span style={{ color: "#bbb", fontFamily: "poppins" }}>
@@ -149,7 +124,7 @@ export default function Cards() {
                 </span>
               </div>
             </div>
-            <div id="dashboard-news-preview-content" style={{ color: "white" }}>
+            <div id="dashboard-news-preview-content" style={{ color: "var(--color)" }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Praesentium corrupti recusandae labore error unde dolores sunt
               consectetur placeat. Delectus illum fuga ipsa cupiditate, vel
