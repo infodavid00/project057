@@ -1,5 +1,5 @@
 
-#application-header {
+.application-header {
  position: fixed;
  top: 3.5%;
  width: 78%;
@@ -10,6 +10,9 @@
  -moz-user-select: none;
  -webkit-user-select: none;
  z-index: 4;
+}
+.application-fullwidth-header {
+  width: 100%;
 }
 #application-header-container {
  background-color: rgba(25,25,27,0.9);
@@ -89,18 +92,21 @@
  display: none;
  cursor: pointer;
 } 
+#apk-fullwidth-header-title {
+  font-size: 25px;
+}
 
 
 @media (max-width:760px) {
 #application-header-menu {
    display: inline;
 }
-#application-header {
-  top: 1%;
+.application-header {
+  top: 2%;
   width: 100%;
 }
 #application-header-container {
-  padding: 2em 0.9em;
+  padding: 1.5em 0.9em;
 }
 #application-header-container {
    flex-direction: column;
@@ -131,7 +137,7 @@
 
 @media (max-width:937px) {
 #application-header-container1 div {
-    font-size: 24px;
+    font-size: 23px;
 }
 }
 
