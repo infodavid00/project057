@@ -9,7 +9,10 @@ export default function Header({ title, shouldShowNavigation, useFullWidth, titl
          useFullWidth ? "application-header application-fullwidth-header" :
          "application-header"
         }>
-        <div id="application-header-container">
+        <div className={
+          useFullWidth ? "application-header-container application-header-container-fullWidth" :
+          "application-header-container"
+         }>
           <div id="application-header-container1">
             <div>
               {!useFullWidth && <Menu
