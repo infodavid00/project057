@@ -1,59 +1,10 @@
 import "./monthlyranks.css";
+import cards from "./cards.jsx"
+import { useLocation } from 'react-router-dom';
 
 export default function Cards() {
-  const uname = "Bob Johnson"
-  const cards = [
-    {
-      name: "Jane Doe",
-      deposits: 320,
-      points: "10K"
-    },
-    {
-      name: "Alice Smith",
-      deposits: 315,
-      points: "9.6K"
-    },
-    {
-      name: "Bob Johnson",
-      deposits: 298,
-      points: "7.2K"
-    },
-    {
-      name: "Carol White",
-      deposits: 278,
-      points: "6.8K"
-    },
-    {
-      name: "David Brown",
-      deposits: 245,
-      points: "5.0K"
-    },
-    {
-      name: "Emma Davis",
-      deposits: 203,
-      points: "4.9K"
-    },
-    {
-      name: "Frank Wilson",
-      deposits: 197,
-      points: "3.6K"
-    },
-    {
-      name: "Starry Night",
-      deposits: 156,
-      points: "2.6K"
-    },
-    {
-      name: "Hannah Martinez",
-      deposits: 107,
-      points: "2.1K"
-    },
-    {
-      name: "Bob Johnson",
-      deposits: 96,
-      points: "1.6K"
-    },
-  ];
+  const queryParams = new URLSearchParams(location.search);
+  const uname = queryParams.get('test.uname');
 
   return (
     <div id="monthlyranks-cards-body">
@@ -87,7 +38,9 @@ export default function Cards() {
                943 Points
               </div>
               */}
-              <button className="monthlyranks-card-footer-btn">Swap</button>
+               { element.name === uname &&
+                 <button className="monthlyranks-card-footer-btn">Swap</button>
+               }
             </div>
             {/* section2 */}
           </div>

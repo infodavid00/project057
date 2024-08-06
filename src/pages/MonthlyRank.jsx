@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../comps/header/Header";
 import Sidepanel from "../comps/sidepanel/Sidepanel";
 import Banner from "../comps/monthlyranks/Banner";
+import Notification from "../comps/monthlyranks/Notification";
 import Cards from "../comps/monthlyranks/Cards";
 
 export default function MonthlyRank() {
@@ -20,6 +21,7 @@ export default function MonthlyRank() {
         />
         <div id="application-container">
           <Banner />
+          <Notification />
           <Cards />
         </div>
       </div>

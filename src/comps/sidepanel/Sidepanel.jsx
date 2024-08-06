@@ -48,7 +48,7 @@ export default function Sidepanel({
     {
       icon: <BarChart2 fill={shouldFillIccon(2)} />,
       title: "Monthly Ranks",
-      link: "/dashboard/mt",
+      link: "/dashboard/mt?test.uname=Bob Johnson",
     },
     {
       icon: <BarChart fill={shouldFillIccon(3)} />,

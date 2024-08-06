@@ -11,15 +11,14 @@ export default function Banner() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  const lottieSize = window.innerWidth > 760 ? 300 : 150;
+  const lottieSize = window.innerWidth > 760 ? 240 : 140;
   return (
     <div id="monthlyranks-banner">
       <div id="monthlyranks-banner-section1">
         <div id="monthlyranks-banner-section1-title">Monthly ranks</div>
         <div id="monthlyranks-banner-section1-text">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint rerum
-          fuga laboriosam dolor, magnam molestias dolorem. Debitis quo inventore
-          esse alias, dolorem libero aspernatur minus sit! Maxime minus eum est!
+          fuga laboriosam dolor, magnam molestias dolorem.
         </div>
       </div>
       <Lottie options={defaultOptions} height={lottieSize} width={lottieSize} />
