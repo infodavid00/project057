@@ -269,7 +269,6 @@
 #monthlyranks-banner2-mid , #monthlyranks-banner2-good {
   width: 90%;
   border-left: none;
-  border-top: 20px solid #3D10E9;
   font-size: 13px;
 }
 #monthlyranks-banner2-good {
@@ -278,5 +277,8 @@
 }
 #monthlyranks-banner2-good  section {
   width: 100%;
+}
+#monthlyranks-banner2-lottiesection {
+  display: none;
 }
 }

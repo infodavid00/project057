@@ -30,7 +30,7 @@ export default function Section3() {
                </div>
              </div>
               <button id="landing-leadcontainer-btn">
-               <Link  to="/signup">Get started</Link>
+               <Link to="/signup" style={{ color: "black" }}>Get started</Link>
               </button>
           </div>
        </div>

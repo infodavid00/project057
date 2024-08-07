@@ -39,7 +39,7 @@ export default function Notification() {
           an iPhone 15 Pro Max and a €100 cash price as a reward for your execeptional 
           achievement.
         </section>
-        <div>
+        <div id="monthlyranks-banner2-lottiesection">
           <Lottie options={defaultOptions} height={100} width={300} />
         </div>
        </div>

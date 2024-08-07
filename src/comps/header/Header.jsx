@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import "./header.css";
 import { Menu, LogIn, UserPlus, Send } from "react-feather";
 
-export default function Header({ title, shouldShowNavigation, useFullWidth, titleLink }) {
+export default function Header({
+    title, shouldShowNavigation, useFullWidth, titleLink, hideInvite
+}) {
   return (
     <>
       <div className={
@@ -27,9 +29,11 @@ export default function Header({ title, shouldShowNavigation, useFullWidth, titl
             </div>
           </div>
           <div id="application-header-container2">
+           {hideInvite !== true &&
             <Link to="/invite" className="application-header-container2-btn">
               <Send width={17} height={17} strokeWidth={1.9} /> Invite{" "}
             </Link>
+            }
             <Link to="/signin" className="application-header-container2-btn">
               <LogIn width={17} height={17} strokeWidth={1.9} /> Sign in{" "}
             </Link>

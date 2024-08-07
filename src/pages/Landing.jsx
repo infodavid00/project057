@@ -6,6 +6,12 @@ import Leadinfo from "../comps/landing/Leadinfo";
 import Section3 from "../comps/landing/Section3";
 import Section4 from "../comps/landing/Section4";
 import Section5 from "../comps/landing/Section5";
+import Section6 from "../comps/landing/Section6";
+import Section7 from "../comps/landing/Section7";
+import Section8 from "../comps/landing/Section8";
+import Section9 from "../comps/landing/Section9";
+import Section10 from "../comps/landing/Section10";
+import Section11 from "../comps/landing/Section11";
 
 export default function Landing() {
   return (
@@ -15,6 +21,7 @@ export default function Landing() {
           shouldShowNavigation={false}
           useFullWidth={true}
           titleLink={"/"}
+          hideInvite={true}
         />
         {/* Header */}
         <div id="landing-leadcontainer">
@@ -35,6 +42,12 @@ export default function Landing() {
         <Section3 />
         <Section4 />
         <Section5 />
+        <Section6 />
+        <Section7 />
+        <Section8 />
+        <Section9 />
+        <Section10 />
+        <Section11 />
     </>
   )
 }
