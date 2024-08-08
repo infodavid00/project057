@@ -9,18 +9,23 @@ export default function Section3() {
        <div id="landing-section3-inner">
           <img src={section3banner} id="landing-section3-inner-banner" />
           <div>
-             <div id="landing-section3-inner-title">Determine your financial future</div>
+             <div id="landing-section3-inner-title">Plan Your Financial Success</div>
              <div className="landing-section3-inner-listscont">
                <img src={Checkmark} />
-               <div>
-                <span style={{color:"white",fontFamily:"poppins-semibold"}}>Trade as you wish -</span> via app on iOS or Android and on the web.
+               <div>Learn to invest in ETFs, stocks, funds, and crypto with our trading courses, suitable for all levels.
                </div>
              </div>
              <div className="landing-section3-inner-listscont">
                <img src={Checkmark} />
-               <div>
-                <span style={{color:"white",fontFamily:"poppins-semibold"}}>I Let cash do the work -</span> receive 2.6% pa interest (Baader Bank) on up to €100,000.
-               </div>
+               <div>Trade conveniently from your computer - utilize our intuitive and user-friendly platforms.</div>
+             </div>
+             <div className="landing-section3-inner-listscont">
+               <img src={Checkmark} />
+               <div>Take advantage of our copytrading systems - follow top traders and maximize your returns.</div>
+             </div>
+             <div className="landing-section3-inner-listscont">
+               <img src={Checkmark} />
+               <div>Earn with our affiliate program - up to €900 for each person you invite who purchases one of our services.</div>
              </div>
           </div>
        </div>
