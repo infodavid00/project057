@@ -13,7 +13,7 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
-    "framer-motion": "^11.3.21",
+    "framer-motion": "^11.3.24",
     "install": "^0.13.0",
     "npm": "^10.8.2",
     "react": "^18.3.1",
@@ -21,6 +21,7 @@
     "react-dom": "^18.3.1",
     "react-feather": "^2.0.10",
     "react-icons": "^5.2.1",
+    "react-intersection-observer": "^9.13.0",
     "react-lottie": "^1.2.4",
     "react-router-dom": "^6.25.1"
   },

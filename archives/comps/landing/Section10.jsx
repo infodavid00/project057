@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown, ChevronUp } from "react-feather";
+import { Plus, Minus } from "react-feather";
 import "./landing.css";
 
 export default function Section10() {
@@ -20,8 +20,8 @@ export default function Section10() {
                   <div className="landing-section10-topiccollapsed-title">
                     <div>Is it possible to transfer a securities account to Scalable Broker?</div>
                     {collapsedTopics[0] === 0 ? 
-                      <ChevronDown color="#747575" style={{ cursor: "pointer" }} /> :
-                      <ChevronUp color="#747575" style={{ cursor: "pointer" }} />
+                      <Plus color="#747575" style={{ cursor: "pointer" }} /> :
+                      <Minus color="#747575" style={{ cursor: "pointer" }} />
                     }
                   </div>
                   <div className="landing-section10-topiccollapsed-text" style={{ display: collapsedTopics[0] === 1 ? "block" : "none" }}>
@@ -38,8 +38,8 @@ export default function Section10() {
                   <div className="landing-section10-topiccollapsed-title">
                     <div>Is there a minimum deposit amount?</div>
                     {collapsedTopics[1] === 0 ? 
-                      <ChevronDown color="#747575" style={{ cursor: "pointer" }} /> :
-                      <ChevronUp color="#747575" style={{ cursor: "pointer" }} />
+                      <Plus color="#747575" style={{ cursor: "pointer" }} /> :
+                      <Minus color="#747575" style={{ cursor: "pointer" }} />
                     }
                   </div>
                   <div className="landing-section10-topiccollapsed-text" style={{ display: collapsedTopics[1] === 1 ? "block" : "none" }}>
@@ -56,8 +56,8 @@ export default function Section10() {
                   <div className="landing-section10-topiccollapsed-title">
                     <div>How does the registration process work?</div>
                     {collapsedTopics[2] === 0 ? 
-                      <ChevronDown color="#747575" style={{ cursor: "pointer" }} /> :
-                      <ChevronUp color="#747575" style={{ cursor: "pointer" }} />
+                      <Plus color="#747575" style={{ cursor: "pointer" }} /> :
+                      <Minus color="#747575" style={{ cursor: "pointer" }} />
                     }
                   </div>
                   <div className="landing-section10-topiccollapsed-text" style={{ display: collapsedTopics[2] === 1 ? "block" : "none" }}>
@@ -74,8 +74,8 @@ export default function Section10() {
                   <div className="landing-section10-topiccollapsed-title">
                     <div>Which stock exchanges are available?</div>
                     {collapsedTopics[3] === 0 ? 
-                      <ChevronDown color="#747575" style={{ cursor: "pointer" }} /> :
-                      <ChevronUp color="#747575" style={{ cursor: "pointer" }} />
+                      <Plus color="#747575" style={{ cursor: "pointer" }} /> :
+                      <Minus color="#747575" style={{ cursor: "pointer" }} />
                     }
                   </div>
                   <div className="landing-section10-topiccollapsed-text" style={{ display: collapsedTopics[3] === 1 ? "block" : "none" }}>
@@ -92,8 +92,8 @@ export default function Section10() {
                   <div className="landing-section10-topiccollapsed-title">
                     <div>What are the trading hours on gettex and Xetra?</div>
                     {collapsedTopics[4] === 0 ? 
-                      <ChevronDown color="#747575" style={{ cursor: "pointer" }} /> :
-                      <ChevronUp color="#747575" style={{ cursor: "pointer" }} />
+                      <Plus color="#747575" style={{ cursor: "pointer" }} /> :
+                      <Minus color="#747575" style={{ cursor: "pointer" }} />
                     }
                   </div>
                   <div className="landing-section10-topiccollapsed-text" style={{ display: collapsedTopics[4] === 1 ? "block" : "none" }}>
@@ -110,8 +110,8 @@ export default function Section10() {
                   <div className="landing-section10-topiccollapsed-title">
                     <div>Which financial products can I invest in?</div>
                     {collapsedTopics[5] === 0 ? 
-                      <ChevronDown color="#747575" style={{ cursor: "pointer" }} /> :
-                      <ChevronUp color="#747575" style={{ cursor: "pointer" }} />
+                      <Plus color="#747575" style={{ cursor: "pointer" }} /> :
+                      <Minus color="#747575" style={{ cursor: "pointer" }} />
                     }
                   </div>
                   <div className="landing-section10-topiccollapsed-text" style={{ display: collapsedTopics[5] === 1 ? "block" : "none" }}>
@@ -128,8 +128,8 @@ export default function Section10() {
                   <div className="landing-section10-topiccollapsed-title">
                     <div>Can I trade fractions?</div>
                     {collapsedTopics[6] === 0 ? 
-                      <ChevronDown color="#747575" style={{ cursor: "pointer" }} /> :
-                      <ChevronUp color="#747575" style={{ cursor: "pointer" }} />
+                      <Plus color="#747575" style={{ cursor: "pointer" }} /> :
+                      <Minus color="#747575" style={{ cursor: "pointer" }} />
                     }
                   </div>
                   <div className="landing-section10-topiccollapsed-text" style={{ display: collapsedTopics[6] === 1 ? "block" : "none" }}>
@@ -152,8 +152,8 @@ export default function Section10() {
                   <div className="landing-section10-topiccollapsed-title">
                     <div>Which order types are available to me?</div>
                     {collapsedTopics[7] === 0 ? 
-                      <ChevronDown color="#747575" style={{ cursor: "pointer" }} /> :
-                      <ChevronUp color="#747575" style={{ cursor: "pointer" }} />
+                      <Plus color="#747575" style={{ cursor: "pointer" }} /> :
+                      <Minus color="#747575" style={{ cursor: "pointer" }} />
                     }
                   </div>
                   <div className="landing-section10-topiccollapsed-text" style={{ display: collapsedTopics[7] === 1 ? "block" : "none" }}>
@@ -170,8 +170,8 @@ export default function Section10() {
                   <div className="landing-section10-topiccollapsed-title">
                     <div>How can I adjust or suspend a savings plan?</div>
                     {collapsedTopics[8] === 0 ? 
-                      <ChevronDown color="#747575" style={{ cursor: "pointer" }} /> :
-                      <ChevronUp color="#747575" style={{ cursor: "pointer" }} />
+                      <Plus color="#747575" style={{ cursor: "pointer" }} /> :
+                      <Minus color="#747575" style={{ cursor: "pointer" }} />
                     }
                   </div>
                   <div className="landing-section10-topiccollapsed-text" style={{ display: collapsedTopics[8] === 1 ? "block" : "none" }}>
@@ -188,8 +188,8 @@ export default function Section10() {
                   <div className="landing-section10-topiccollapsed-title">
                     <div>Will I receive a tax certificate at the end of the year?</div>
                     {collapsedTopics[9] === 0 ? 
-                      <ChevronDown color="#747575" style={{ cursor: "pointer" }} /> :
-                      <ChevronUp color="#747575" style={{ cursor: "pointer" }} />
+                      <Plus color="#747575" style={{ cursor: "pointer" }} /> :
+                      <Minus color="#747575" style={{ cursor: "pointer" }} />
                     }
                   </div>
                   <div className="landing-section10-topiccollapsed-text" style={{ display: collapsedTopics[9] === 1 ? "block" : "none" }}>
@@ -206,8 +206,8 @@ export default function Section10() {
                   <div className="landing-section10-topiccollapsed-title">
                     <div>How can I set up or change an exemption order?</div>
                     {collapsedTopics[10] === 0 ? 
-                      <ChevronDown color="#747575" style={{ cursor: "pointer" }} /> :
-                      <ChevronUp color="#747575" style={{ cursor: "pointer" }} />
+                      <Plus color="#747575" style={{ cursor: "pointer" }} /> :
+                      <Minus color="#747575" style={{ cursor: "pointer" }} />
                     }
                   </div>
                   <div className="landing-section10-topiccollapsed-text" style={{ display: collapsedTopics[10] === 1 ? "block" : "none" }}>
@@ -224,8 +224,8 @@ export default function Section10() {
                   <div className="landing-section10-topiccollapsed-title">
                     <div>What fees does Scalable Broker charge?</div>
                     {collapsedTopics[4] === 0 ? 
-                      <ChevronDown color="#747575" style={{ cursor: "pointer" }} /> :
-                      <ChevronUp color="#747575" style={{ cursor: "pointer" }} />
+                      <Plus color="#747575" style={{ cursor: "pointer" }} /> :
+                      <Minus color="#747575" style={{ cursor: "pointer" }} />
                     }
                   </div>
                   <div className="landing-section10-topiccollapsed-text" style={{ display: collapsedTopics[11] === 1 ? "block" : "none" }}>
