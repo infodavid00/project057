@@ -13,7 +13,7 @@ import Footerbanner from "../../assets/images/footerbanner.svg";
 export default function Footer() {
   return (
     <div id="landing-footer">
-       <div id="landing-footer-maintext">Investing involves risks. The value of your investment can fall or rise. You may lose the capital you invested. Past performance, simulations or forecasts are not a reliable indicator of future performance. Please note our risk information .</div>
+      
        {/* SECTION A */}
        <div id="landing-footer-sectionb">
           <div className="landing-footer-sectionb-child">
@@ -34,9 +34,19 @@ export default function Footer() {
                <button><ChevronRight color="black" strokeWidth={1.2} /></button>
              </div>
           </div>
+       <div id="landing-footer-sectiond">
+          <div>
+            <div className="landing-footer-sectiond-bold">Wolfx Academy</div>
+            <div className="landing-footer-sectiond-faint">Seitzstraße 8e, 80538 Munich | Contact | Imprint</div>
+            <div className="landing-footer-sectiond-faint">Responsible supervisory authority: BaFin, Deutsche Bundesbank</div>
+            <br />
+            <div className="landing-footer-sectiond-faint">Copyright © Wolfx Academy | All rights reserved.</div>
+           </div>
+       </div>
+       {/* SECTION D */}
        </div>
        {/* SECTION B */}
-       <div id="landing-footer-sectionc">
+       {/*<div id="landing-footer-sectionc">
           <div className="landing-footer-sectionc-linkcontainers"> 
             <div className="landing-footer-sectionc-linkheader">SCALABLE CAPITAL</div>
             <Link className="landing-footer-sectionc-linktext">About us</Link>
@@ -63,19 +73,8 @@ export default function Footer() {
             <Link className="landing-footer-sectionc-linktext">Policy Sustainability Disclosures</Link>
             <Link className="landing-footer-sectionc-linktext">Privacy Settings</Link>
           </div>
-       </div>
+       </div>*/}
        {/* SECTION C */}
-       <div id="landing-footer-sectiond">
-          <div>
-            <div className="landing-footer-sectiond-bold">Wolfx Academy</div>
-            <div className="landing-footer-sectiond-faint">Seitzstraße 8e, 80538 Munich | Contact | Imprint</div>
-            <div className="landing-footer-sectiond-faint">Responsible supervisory authority: BaFin, Deutsche Bundesbank</div>
-            <br />
-            <div className="landing-footer-sectiond-faint">Copyright © Wolfx Academy | All rights reserved.</div>
-           </div>
-           <img src={Footerbanner} />
-       </div>
-       {/* SECTION D */}
     </div>
   )
 }

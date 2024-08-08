@@ -5,28 +5,33 @@ import Checkmark from "../../assets/svgs/checkmark.svg";
 
 export default function Section3() {
   return (
-     <div style={{ marginTop: "4em" }}>
+     <div id="landing-section3-container">
        <div id="landing-section3-inner">
           <img src={section3banner} id="landing-section3-inner-banner" />
           <div>
-             <div id="landing-section3-inner-title">Plan Your Financial Success</div>
+             <div id="landing-section3-inner-title">Determine your financial future</div>
              <div className="landing-section3-inner-listscont">
                <img src={Checkmark} />
-               <div>Learn to invest in ETFs, stocks, funds, and crypto with our trading courses, suitable for all levels.
+               <div>
+                Invest in ETFs, stocks, funds and crypto <span style={{color:"white",fontFamily:"poppins-semibold"}}>from a savings rate of €1.
+               </span>
                </div>
              </div>
              <div className="landing-section3-inner-listscont">
                <img src={Checkmark} />
-               <div>Trade conveniently from your computer - utilize our intuitive and user-friendly platforms.</div>
+               <div>
+                <span style={{color:"white",fontFamily:"poppins-semibold"}}>Trade as you wish -</span> via app on iOS or Android and on the web.
+               </div>
              </div>
              <div className="landing-section3-inner-listscont">
                <img src={Checkmark} />
-               <div>Take advantage of our copytrading systems - follow top traders and maximize your returns.</div>
+               <div>
+                <span style={{color:"white",fontFamily:"poppins-semibold"}}>I Let cash do the work -</span> receive 2.6% pa interest (Baader Bank) on up to €100,000.
+               </div>
              </div>
-             <div className="landing-section3-inner-listscont">
-               <img src={Checkmark} />
-               <div>Earn with our affiliate program - up to €900 for each person you invite who purchases one of our services.</div>
-             </div>
+              <button id="landing-leadcontainer-btn">
+               <Link to="/signup" style={{ color: "black" }}>Get started</Link>
+              </button>
           </div>
        </div>
      </div>
