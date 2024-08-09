@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import "./header.css";
-import { Menu, LogIn, UserPlus, Send } from "react-feather";
+import { Menu, LogIn, UserPlus, Send, HelpCircle } from "react-feather";
 
 export default function Header({
-    title, shouldShowNavigation, useFullWidth, titleLink, hideInvite
+    title, shouldShowNavigation, useFullWidth, titleLink, hideInvite, showSupport
 }) {
   return (
     <>
@@ -32,6 +32,11 @@ export default function Header({
            {hideInvite !== true &&
             <Link to="/invite" className="application-header-container2-btn">
               <Send width={17} height={17} strokeWidth={1.9} /> Invite{" "}
+            </Link>
+            }
+           {showSupport === true &&
+            <Link to="/support" className="application-header-container2-btn">
+              <HelpCircle width={17} height={17} strokeWidth={1.9} /> Support{" "}
             </Link>
             }
             <Link to="/signin" className="application-header-container2-btn">
