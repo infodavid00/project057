@@ -5,8 +5,8 @@ import section9 from "../../assets/images/section9.png";
 export default function Section9() {
   return (
     <div id="landing-section9-wrapper">
-      <div id="landing-section9">
-        <div> 
+      <div className="landing-section9">
+        <div className="landing-section9-textwrapper"> 
           <div className="landing-section9-headercont"> 
              <div className="landing-section9-header-riskbtn" style={{  border: "1px solid #3B2A11", backgroundColor: "#211814", color: "#F7D100" }}>High</div>
              <div className="landing-section9-header-risk">Penny (€250 Investment)</div>
@@ -17,8 +17,8 @@ export default function Section9() {
         <img src={section9} className="landing-section9-image" />
       </div>
 
-      <div id="landing-section9">
-        <div> 
+      <div className="landing-section9 landing-section9-reverse">
+        <div className="landing-section9-textwrapper"> 
           <div className="landing-section9-headercont"> 
              <div className="landing-section9-header-riskbtn" style={{ border: "1px solid #1D3712", backgroundColor: "#131E14", color: "#85F921"}}>Medium-High</div>
              <div className="landing-section9-header-risk">Blue (€500 Investment)</div>
@@ -29,8 +29,8 @@ export default function Section9() {
         <img src={section9} className="landing-section9-image" />
       </div>
 
-      <div id="landing-section9">
-        <div> 
+      <div className="landing-section9">
+        <div className="landing-section9-textwrapper"> 
           <div className="landing-section9-headercont"> 
              <div className="landing-section9-header-riskbtn" style={{ border: "1px solid #3F0A50", backgroundColor: "#1F0C25", color: "#D100FF"}}>Medium</div>
              <div className="landing-section9-header-risk">Alpha (€1000 Investment)</div>
@@ -41,8 +41,8 @@ export default function Section9() {
         <img src={section9} className="landing-section9-image" />
       </div>
 
-      <div id="landing-section9">
-        <div> 
+      <div className="landing-section9 landing-section9-reverse">
+        <div className="landing-section9-textwrapper"> 
           <div className="landing-section9-headercont"> 
              <div className="landing-section9-header-riskbtn" style={{ border: "1px solid #07344A", backgroundColor: "#08182A", color: "#03C0E2"}} >Medium-Low</div>
              <div className="landing-section9-header-risk">Elite (€3000 Investment)</div>
