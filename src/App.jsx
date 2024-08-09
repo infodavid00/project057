@@ -9,6 +9,7 @@ import Landing from "./pages/Landing";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Invite from "./pages/Invite";
+import Support from "./pages/Support";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/signin" element={<Signin />} />
         <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/invite" element={<Invite />} />
+        <Route exact path="/support" element={<Support />} />
       </Routes>
     </>
   );

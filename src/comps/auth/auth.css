@@ -71,6 +71,11 @@
   background-color: transparent;
   color: rgba(140,140,140,0.4);
 }
+.auth-inputcontainer-outer textarea::placeholder {
+  font-family: 'poppins', sans-serif;
+  background-color: transparent;
+  color: rgba(140,140,140,0.4);
+}
 #auth-inputcontainer-outer-psw {
   display: flex;
   flex-direction: row;

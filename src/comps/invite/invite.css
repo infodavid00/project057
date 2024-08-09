@@ -1,4 +1,17 @@
-
+#support-leadsection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 92%;
+    margin: auto;
+    padding: 0 4em;
+    margin-top: 7em;
+    margin-bottom: 2em;
+}
+#support-leadsection img {
+    width: 400px;
+}
 
 #invitepage-leadsection {
     display: flex;
@@ -67,6 +80,18 @@
 
 
 @media (max-width: 760px) {
+#support-leadsection {
+    flex-direction: column-reverse;
+    width: 88%;
+    margin: auto;
+    margin-top: 10em;
+    margin-bottom: 2em;
+    padding: 0;
+}
+#support-leadsection img {
+    width: 300px;
+}
+
 #invitepage-leadsection {
     flex-direction: column-reverse;
     width: 88%;
