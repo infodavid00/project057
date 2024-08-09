@@ -586,12 +586,17 @@
   display: flex;
   gap: 2em;
   margin-top: 2em;
+  flex-direction: column;
+  align-items: center;
 }
 .landing-footer-sectionb-child {
   width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .landing-footer-sectionb-child-title {
-  font-size: 24px;
+  font-size: 20px;
   font-family: "poppins", sans-serif;
 }
 #landing-footer-sectionb-child-iconsection {
@@ -601,8 +606,8 @@
   margin-top: 0.5em;
 }
 #landing-footer-sectionb-child-iconsection img {
-  width: 30px;
-  height: 30px;
+  width: 23px;
+  height: 23px;
 }
 #landing-footer-sectionb-child-inputsection {
   margin-top: 0.5em;
@@ -625,28 +630,6 @@
   outline: none;
   border-radius: 16px 7px 16px 7px;
   background-color: #00F9D4;
-}
-#landing-footer-sectionc {
-  display: flex;
-  flex-direction: row;
-  margin-top: 2.5em;
-  padding: 0 5em;
-  flex-wrap: wrap;
-  gap: 2em;
-}
-.landing-footer-sectionc-linkcontainers {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-}
-.landing-footer-sectionc-linkheader {
-  font-size: 22px;
-  font-family: "poppins", sans-serif;
-  margin-bottom: 0.3em;
-}
-.landing-footer-sectionc-linktext {
-  font-family: "poppins", sans-serif;
-  font-size: 16px;
 }
 #landing-footer-sectiond {
   border-top: 1px solid #13514A;
@@ -926,23 +909,6 @@
 }
 #landing-footer-sectionb-child-inputsection button {
   padding: 6px;
-}
-#landing-footer-sectionc {
-  flex-direction: column;
-  padding: 0;
-  gap: 1em;
-}
-.landing-footer-sectionc-linkcontainers {
-  width: 100%;
-  flex-direction: column;
-}
-.landing-footer-sectionc-linkheader {
-  font-size: 21px;
-  margin-bottom: 0.3em;
-  margin-top: 1em;
-}
-.landing-footer-sectionc-linktext {
-  font-size: 14px;
 }
 #landing-footer-sectiond {
   padding-top: 1.6em;

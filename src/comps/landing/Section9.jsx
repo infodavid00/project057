@@ -8,7 +8,7 @@ export default function Section9() {
       <div className="landing-section9">
         <div className="landing-section9-textwrapper"> 
           <div className="landing-section9-headercont"> 
-             <div className="landing-section9-header-riskbtn" style={{  border: "1px solid #3B2A11", backgroundColor: "#211814", color: "#F7D100" }}>High</div>
+             <div className="landing-section9-header-riskbtn" style={{  border: "1px solid #3B2A11", backgroundColor: "#211814", color: "#F7D100" }}>High Risk</div>
              <div className="landing-section9-header-risk">Penny (€250 Investment)</div>
           </div>
           <div className="landing-section9-feature">FEATURES - This level is designed for those who want to start with a minimum investment. WOLFXBOT uses more aggressive strategies to try to obtain quick returns with limited capital.</div>
@@ -20,7 +20,7 @@ export default function Section9() {
       <div className="landing-section9 landing-section9-reverse">
         <div className="landing-section9-textwrapper"> 
           <div className="landing-section9-headercont"> 
-             <div className="landing-section9-header-riskbtn" style={{ border: "1px solid #1D3712", backgroundColor: "#131E14", color: "#85F921"}}>Medium-High</div>
+             <div className="landing-section9-header-riskbtn" style={{ border: "1px solid #1D3712", backgroundColor: "#131E14", color: "#85F921"}}>Medium-High Risk</div>
              <div className="landing-section9-header-risk">Blue (€500 Investment)</div>
           </div>
           <div className="landing-section9-feature">FEATURES - With a larger investment, WOLFXBOT adopts a combination of balanced strategies to balance risk and return. This level is suitable for those who have a little more capital and are looking for greater stability.</div>
@@ -32,7 +32,7 @@ export default function Section9() {
       <div className="landing-section9">
         <div className="landing-section9-textwrapper"> 
           <div className="landing-section9-headercont"> 
-             <div className="landing-section9-header-riskbtn" style={{ border: "1px solid #3F0A50", backgroundColor: "#1F0C25", color: "#D100FF"}}>Medium</div>
+             <div className="landing-section9-header-riskbtn" style={{ border: "1px solid #3F0A50", backgroundColor: "#1F0C25", color: "#D100FF"}}>Medium Risk</div>
              <div className="landing-section9-header-risk">Alpha (€1000 Investment)</div>
           </div>
           <div className="landing-section9-feature">FEATURES - This tier allows WOLFXBOT to implement sophisticated and diversified strategies. Investors at this level benefit from more advanced risk management and greater resistance to market volatility.</div>
@@ -44,7 +44,7 @@ export default function Section9() {
       <div className="landing-section9 landing-section9-reverse">
         <div className="landing-section9-textwrapper"> 
           <div className="landing-section9-headercont"> 
-             <div className="landing-section9-header-riskbtn" style={{ border: "1px solid #07344A", backgroundColor: "#08182A", color: "#03C0E2"}} >Medium-Low</div>
+             <div className="landing-section9-header-riskbtn" style={{ border: "1px solid #07344A", backgroundColor: "#08182A", color: "#03C0E2"}}>Medium-Low Risk</div>
              <div className="landing-section9-header-risk">Elite (€3000 Investment)</div>
           </div>
           <div className="landing-section9-feature">FEATURES - With the highest investment level, WOLFXBOT uses highly diversified and professionally managed strategies. This tier offers greater protection against market volatility thanks to advanced risk management.</div>
