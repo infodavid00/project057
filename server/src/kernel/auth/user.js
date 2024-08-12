@@ -35,15 +35,16 @@ export async function signup(request, response) {
                   if (userHasPaid) {
                      const password = await new Hash(payload.password).sign()
                      const inviteId = btoa(idGenerator(payload.email));
+                      const _id = idGenerator(payload.email);
                      const userInfo = {
-                        _id: idGenerator(payload.email),
+                        _id,
                         inviteId,
                         pubId: pudIdGenerator(),
                         firstName: payload.fname,
                         lastName: payload.lname,
                         email: payload.email,
                         password,
-                        refered: {},
+                        refered: [],
                         referer: null
                      }
 
@@ -62,12 +63,10 @@ export async function signup(request, response) {
                      if (userWasRefered) {
                         await users.updateOne(
                            { inviteId: userWasRefered.iid },
-                            {
-                                $set: {
-                            
-                           }}
+                           { $push: { refered: _id } }
                         );
-                     } 
+                      } 
+                     response.status(200).json(ok("ok", ""));
                   } else {
                     const message = [
                         "This mt4 is still under review or does not exists",
