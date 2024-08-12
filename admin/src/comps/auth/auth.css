@@ -1,0 +1,122 @@
+#auth-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#auth-wrapper::-webkit-scrollbar{
+  display: none;
+  width: 0em;
+  height: 0em;
+}
+#auth-body {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-color);
+  box-shadow: var(--box-shadow);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  padding: 2em;
+}
+
+#auth-title {
+  font-size: 36px;
+  line-height: 43px;
+  font-family: 'helvetica', sans-serif;
+  font-weight: 700;
+  margin-top: 0.5em
+}
+.auth-inputcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-bottom: 1.4em;
+}
+.auth-input-title {
+  font-family: 'poppins', sans-serif;
+}
+.auth-inputcontainer-outer {
+  font-family: 'poppins', sans-serif;
+  border: 1px solid rgba(140,140,140,0.4);
+  border-radius: 13px;
+  padding: 10px 1em;
+  background-color: transparent;
+  width: 100%;
+}
+.auth-inputcontainer-outer input, .auth-inputcontainer-inner {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: 'poppins', sans-serif;;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+}
+.auth-inputcontainer-outer input::placeholder {
+  font-family: 'poppins', sans-serif;
+  background-color: transparent;
+  color: rgba(140,140,140,0.4);
+}
+.auth-inputcontainer-outer textarea::placeholder {
+  font-family: 'poppins', sans-serif;
+  background-color: transparent;
+  color: rgba(140,140,140,0.4);
+}
+#auth-inputcontainer-outer-psw {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}
+.auth-submitbtn  {
+  text-decoration: none;
+  padding: 14px 1em;
+  width: 100%;
+  border-radius: 13px;
+  outline: none;
+  font-family: 'poppins-semibold', sans-serif;
+  color: var(--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8em;
+  font-size: 14px;
+  white-space: nowrap;
+  border: 2px solid #2c2c2c;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+  margin-top: 1.3em;
+}
+.auth-submitbtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+.auth-submitbtn:hover::after {
+  transform: scale(4);
+}
+.auth-submitbtn:hover {
+  border-color: #666666;
+  background: #292929;
+}
+

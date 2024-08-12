@@ -1,0 +1,41 @@
+{
+  "name": "chronos",
+  "version": "1.0.0",
+  "description": "A nodeJS hybrid server for building reliable, scalable and secure applications.",
+  "main": "src/chronos.js",
+  "type": "module",
+  "engines": {
+    "node": ">= 18.20.3"
+  },
+  "scripts": {
+    "start": "cd ./tests/use && node index.js",
+    "dev": "cd ./tests/use && nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/super-user-d0/chronos.git"
+  },
+  "keywords": [
+    "api",
+    "backend",
+    "backend framework",
+    "framework",
+    "node",
+    "server",
+    "web",
+    "web framework",
+    "web server"
+  ],
+  "author": "David.A",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/super-user-d0/chronos/issues"
+  },
+  "homepage": "https://github.com/super-user-d0/chronos#readme",
+  "dependencies": {
+    "yaml": "^2.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

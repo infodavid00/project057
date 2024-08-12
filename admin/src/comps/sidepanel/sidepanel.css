@@ -1,0 +1,67 @@
+
+.sidepanel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 22%;
+  z-index: 5;
+  background-color: var(--panel-color);
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+#sidepanel-leadcontainer {
+  font-size: 25px;
+  font-family: 'helvetica', sans-serif;
+  font-weight: 800;
+  line-height: 24px;
+  width: 100%;
+  margin-top: 0.7em;
+  padding: 1em 1em;
+  border-bottom: 0.5px solid rgba(200,200,200,0.2);
+}
+#sidepanel-logo {
+  color: var(--color);
+  text-decoration: none;
+}
+#sidepanel-links-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  margin-top: 2em;  
+}
+.sidepanel-link-container {
+  display: flex;
+  gap: 0.9em ;
+  align-items: center;
+  width: 85%;
+  border-radius: 3px;
+  font-family: 'poppins', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color);
+}
+#sidepanel-link-container-active {
+  color: var(--color);
+  font-family: 'poppins-semibold', sans-serif;
+  font-weight: 700;
+  border-right: 2px solid var(--color);
+}
+.sidepanel-link-link {
+  color: var(--color);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+#application-body {
+  width: 78%;
+  margin-left: 22%;
+  padding-bottom: 2em;
+}
+#application-container {
+  margin-top: 7em;
+}

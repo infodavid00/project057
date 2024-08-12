@@ -1,0 +1,84 @@
+
+#support-body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 95%;
+  margin: auto;
+  margin-top: 8%;
+}
+#support-body-supports {
+  width: 70%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-top: 1.5em;
+}
+#support-body-meta {
+  width: 23%;
+  position: fixed;
+  right: 0;
+  padding: 1em 1.5em;
+}
+
+.support-lists-cont {
+  word-break: break-all;
+  border-bottom: 1px solid #222;
+  padding: 1em 0;
+  padding-right: 1em;
+}
+.support-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6em;
+}
+.support-lists-message {
+  font-family: "poppins", sans-serif;
+}
+.support-lists-header-name {
+  font-family: "poppins-semibold", sans-serif;
+  color: white;
+}
+.support-lists-header-email {
+  font-family: "poppins", sans-serif;
+  color: #aaa;
+  font-size: 15.5px;
+}
+.support-lists-header-reply {
+  font-family: "poppins-semibold", sans-serif;
+  color: dodgerblue;
+  cursor: pointer;
+}
+.support-body-meta-list {
+  margin-bottom: 0.8em;
+  font-family: "poppins" ,sans-serif;
+}
+.support-body-meta-btn {
+  padding: 7px 1em;
+  background-color: #1b1b1b;
+  border-radius: 10px;
+  font-family: "poppins-semibold", sans-serif;
+  margin-top: 0.5em;
+  cursor: pointer;
+  border: 1px solid var(--color);
+}
+
+
+#support-reply-body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(5, 5, 5, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#support-reply-container {
+  background-color: var(--card-color);
+  box-shadow: var(--box-shadow);
+  padding: 1em 1.5em;
+  border-radius: 10px;
+  width: 30%;
+}

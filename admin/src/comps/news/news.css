@@ -1,0 +1,56 @@
+
+#news-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  width: 95%;
+  margin: auto;
+  border-bottom: 1px solid #222;
+  padding-bottom: 0.7em;
+}
+#news-header button {
+  padding: 8px 0.7em;
+  outline: none;
+  border-radius: 10px;
+  font-family: 'poppins-semibold', sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+  border: 2px solid #2c2c2c;
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
+#news-header button:hover {
+  border: 2px solid var(--color); 
+}
+#news-header div {
+  font-family: 'poppins-semibold', sans-serif;
+  font-size: 14px;
+}
+#news-listscont {
+  width: 95%;
+  margin: auto;
+  margin-top: 1em;
+}
+
+.news-list-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+}
+.news-list-header-del {
+  padding: 5px 0.7em;
+  outline: none;
+  border-radius: 10px;
+  font-family: 'poppins-semibold', sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+  border: none;
+  background-color: tomato;
+  cursor: pointer;
+}
+.news-list-header-titles {
+  font-family: 'poppins', sans-serif;
+  font-size: 15px;
+}
