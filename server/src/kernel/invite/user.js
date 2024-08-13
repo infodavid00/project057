@@ -3,9 +3,7 @@ import { ok, bad } from "../../etc/responseParser.js";
 import { dbConnect } from "../../store/connections.js"
 import emailer from "../../services/emailer.js"; 
 import InviteTemplate from "./template.js";
-import { randomBytes } from "node:crypto";
-import scrambler from "../../etc/scrambler.js";
-import { parseDDMMYYYYDate } from "../../etc/ddmmyyyyPrinter.js";
+import { getDateArray } from "../../etc/ddmmyyyyPrinter.js";
 
 export async function sendInvite(request, response) {
   try {
@@ -57,6 +55,33 @@ export async function sendInvite(request, response) {
 
 export async function verifyInvite(request, response) {
   try {
+    let { iid, email } = request.params;
+    iid = atob(iid);
+    email = atob(email);
+    if (validator.isEmail(email)) {
+      const userAlreadyExists = await dbConnect().dataset("users").findOne({ email });
+      if (!userAlreadyExists) {
+        const invitePool = dbConnect().dataset("pool_invited");
+        const entityCantBeRefered = await invitePool.findOne({
+          email: email,
+          opened: true
+        });
+        if (!entityCantBeRefered) {
+          const dataset = {
+            iid,
+            opened: true,
+            email,
+            date: getDateArray(new Date())
+          }
+          await invitePool.insertOne(dataset);
+          response.redirect(process.env["BROKER"]);
+        } else {
+          response.status(403).send(`<p>Your request cannot be processed at this time.</p>`);
+        }
+      } else {
+        response.status(403).send(`<p>A user with this email address is already registered.</p>`);
+      }
+    } else { response.status(400).send(`<h2>Cannot process request</h2>`); }
   } catch (error) {
     response.status(500).json(bad("Internal server error", error.message));
   }
