@@ -24,8 +24,8 @@ export default function Logout() {
         })
         .then(response => {
           if (response.ok) {
-            window.location.href = "/login";
             Cookies.remove(tokenVault);
+            window.location.href = "/login";
           }
         })
         .catch((error) => {
