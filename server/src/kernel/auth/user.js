@@ -150,7 +150,10 @@ export async function verifyCredentials(request, response, next) {
        if (_id) {
          const users = dbConnect().dataset("users");
          const dataset = await users.findOne({ _id });
-         if (dataset && dataset.AUTH_CURRENT_LOGIN_TOKEN === token) next()
+         if (dataset && dataset.AUTH_CURRENT_LOGIN_TOKEN === token) {
+           request["_id"] = _id;
+           next()
+         }
          else {
            const message = ["Permission Denied", "Invalid token"];
            response.status(403).json(bad(...message));
