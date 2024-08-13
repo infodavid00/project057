@@ -1,0 +1,72 @@
+
+#reports-body {
+  width: 95%;
+  margin: auto;
+}
+#reports-leadheader {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  background-color: var(--card-color);
+  box-shadow: var(--box-shadow);
+  position: fixed;
+  border-radius: 10px;
+  width: 74.4%;
+  justify-content: space-between;
+  padding: 0.7em 1.3em;
+  z-index: 3;
+}
+#reports-leadheader div {
+  font-family: "poppins-semibold", sans-serif;
+}
+#reports-leadheader button {
+  padding: 7px 1em;
+  border: 1px solid var(--color);
+  background-color: transparent;
+  font-family: "poppins-semibold", sans-serif;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+}
+#reports-leadheader button:hover {
+  opacity: 0.6;
+}
+
+#reports-table {
+  width: 100%;
+  padding-bottom: 2em;
+  overflow-x: auto;
+  padding-top: 3em;
+}
+/* #table-sectionA-header {
+  font-size: 24px;
+  margin-top: 0.6em;
+} */
+#reports-table-container {
+  width: 100%; 
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+#reports-table-container th,
+#reports-table-container td {
+  padding: 1em 5px;
+  text-align: left;
+  white-space: nowrap;
+}
+#reports-table-container th {
+  border-bottom: 1px solid #444;
+  color: #aaa;
+  font-family: "poppins-semibold", sans-serif;
+}
+#reports-table-container td {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.5s forwards;
+  font-family: "poppins", sans-serif;
+}
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
