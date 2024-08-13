@@ -4,6 +4,7 @@ import { dbConnect } from "../../store/connections.js";
 import Hash from "../../etc/hash.js";
 import { randomBytes } from "node:crypto";
 import scrambler from "../../etc/scrambler.js";
+import { parseDDMMYYYYDate } from "../../etc/ddmmyyyyPrinter.js";
 
 const idGenerator = (email) => {
   const string =
@@ -49,7 +50,8 @@ export async function signup(request, response) {
                      const invited = dbConnect().dataset("pool_invited");
                      const userWasRefered = await invited.findOne({
                         email: payload.email,
-                        opened: true
+                        opened: true,
+                        date: parseDDMMYYYYDate(userHasPaid["Registration Date"])
                      });
                      if (userWasRefered) {
                         userInfo.referer = userWasRefered.iid;
