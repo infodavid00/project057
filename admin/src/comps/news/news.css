@@ -31,6 +31,8 @@
   width: 95%;
   margin: auto;
   margin-top: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #1c1c1c;
 }
 
 .news-list-header {
@@ -53,4 +55,8 @@
 .news-list-header-titles {
   font-family: 'poppins', sans-serif;
   font-size: 15px;
+}
+.news-list-contents {
+  font-family: 'poppins', sans-serif;
+  margin-top: 0.7em;
 }
