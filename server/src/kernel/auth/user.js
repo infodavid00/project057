@@ -27,10 +27,10 @@ export async function signup(request, response) {
                const users = dbConnect().dataset("users");
                const userAlreadyExists = await users.findOne({ email: payload.email });
                if (!userAlreadyExists) {
-                  // check if the user has paid.
+                  // check if the user has registered in the broker.
                   const paymentLogs = dbConnect().dataset("RPL");
-                  const userHasPaid = await paymentLogs.findOne({ mt4: payload.mt4 });
-                  if (userHasPaid) {
+                  const userHasRegistered = await paymentLogs.findOne({ mt4: payload.mt4 });
+                  if (userHasRegistered) {
                      const password = await new Hash(payload.password).sign()
                      const inviteId = btoa(idGenerator(payload.email));
                      const _id = idGenerator(payload.email);
@@ -51,7 +51,7 @@ export async function signup(request, response) {
                      const userWasRefered = await invited.findOne({
                         email: payload.email,
                         opened: true,
-                        date: parseDDMMYYYYDate(userHasPaid["Registration Date"])
+                        date: parseDDMMYYYYDate(userHasRegistered["Registration Date"])
                      });
                      if (userWasRefered) {
                         userInfo.referer = userWasRefered.iid;
@@ -70,7 +70,7 @@ export async function signup(request, response) {
                      response.status(200).json(ok("ok", ""));
                   } else {
                     const message = [
-                      "The provided MT4 is still under review or does not exists",
+                      "The provided MT4 is still under review or does not exist",
                       "Reports contaning this mt4 might have not been uploaded"
                     ];
                     response.status(403).json(bad(...message));

@@ -7,5 +7,10 @@
 #   "password": "d00103f1b0a29afffdab"
 # }
 
+POST http://localhost:7001/u/auth/
+Content-Type: application/json 
 
-# CLIENT NEEDS HIGHLY STABLE INTERNET CONNECTION TO UPLOAD REPORTS USING THE ADMIN PANEL, 
+{
+  "username": "admin",
+  "password": "d00103f1b0a29afffdab"
+}
