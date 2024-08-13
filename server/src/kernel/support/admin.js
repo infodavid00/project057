@@ -44,7 +44,7 @@ export async function getSupport(request, response) {
     const size = Number(sizeq) || 10;
     const page = Number(pageq) * size || 0;
     const db = dbConnect().dataset("_support");
-    const dataset = await db.find().skip(page).limit(size).toArray();
+    const dataset = await db.find().skip(page).limit(size).sort({ date: -1 }).toArray();
     response.status(200).json(ok("ok", dataset));
   } catch (error) {
      response.status(500).json(bad("Internal server error", error.message));
