@@ -1,6 +1,7 @@
 import { ok, bad } from "../../etc/responseParser.js";
 import { dbConnect } from "../../store/connections.js";
 import emailer from "../../services/emailer.js"; 
+import supportTemplate from "./supportTemplate.js";
 
 export async function replySupport(request, response) {
   try {
@@ -13,7 +14,7 @@ export async function replySupport(request, response) {
         await emailer(
           `Response to Your Support Request #${support.supportId}`,
           support.email,
-          `<div>${payload.reply}</div>`
+          supportTemplate(support.fullname, support.message, payload.reply)
         );
         await db.deleteOne({ _id: payload.id });
         await sudb.updateOne(
