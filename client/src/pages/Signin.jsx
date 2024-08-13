@@ -1,22 +1,74 @@
 import { useState } from "react";
 import { ChevronLeft, Eye, EyeOff } from "react-feather";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CustomCheckbox from "../comps/auth/checkBox";
 import Cover from "../assets/svgs/Learning-bro.svg";
 import "../comps/auth/auth.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { TailSpin } from 'react-loader-spinner';
+import { BaseEndpoint, tokenVault } from "../etc/network";
+import validator from 'validator';
+import Cookies from 'js-cookie';
 
 export default function Signin() {
   const [isChecked, setIsChecked] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
+
   const handleEyeClick = () => {
     setPasswordVisible(!passwordVisible);
   };
 
+  const handleSignIn = async () => {
+    if (!validator.isEmail(email)) {
+      toast.error("Invalid email format.");
+      return;
+    }
+
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters long.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${BaseEndpoint}/auth/signin`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+      setLoading(false);
+
+      if (response.status === 200) {
+        const decodedData = atob(data.data);
+        const cookieExpiry = isChecked ? 3 : 1 / 144; 
+        Cookies.set(tokenVault, decodedData, { expires: cookieExpiry });
+        navigate("/dashboard");
+      } else {
+        toast.error(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setLoading(false);
+      toast.error("Network error. Please try again later.");
+    }
+  };
+
   return (
     <div id="auth-container">
+      <ToastContainer />
       <div id="auth-infosection">
         <div id="auth-infosection-inner">
           <Link id="auth-backLink" to="/dashboard">
@@ -33,6 +85,8 @@ export default function Signin() {
                 type="email"
                 placeholder="mail@extension.com"
                 autoComplete="off"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
           </div>
@@ -46,8 +100,10 @@ export default function Signin() {
             >
               <input
                 type={passwordVisible ? "text" : "password"}
-                placeholder="Min. 8 characters"
+                placeholder="Min. 6 characters"
                 autoComplete="new-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               {passwordVisible ? (
                 <EyeOff
@@ -76,9 +132,10 @@ export default function Signin() {
           </div>
           <button
             className="auth-submitbtn"
-            onClick={() => (window.location.href = "/dashboard")}
+            onClick={handleSignIn}
+            disabled={loading}
           >
-            Sign In
+            {loading ? <TailSpin width={20} height={20} /> : "Sign In"}
           </button>
           <div className="auth-footer">
             <div style={{ color: "#bbb" }}>Not registered yet?</div>

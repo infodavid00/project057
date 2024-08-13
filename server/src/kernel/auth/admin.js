@@ -56,3 +56,17 @@ export async function verifyCredentials(request, response, next) {
      response.status(500).json(bad("Internal server error", error.message));
   }
 }
+
+
+export async function signout(_, response) {
+  try {
+     const db = dbConnect().dataset("_su");
+     await db.updateOne(
+        { _id: "ADMIN" }, 
+        { $set: { tokenId: null, loginAt: 0 } }
+     );
+     response.status(200).json(ok("ok"));
+  } catch (error) {
+    response.status(500).json(bad("Internal server error", error.message));
+  }
+}

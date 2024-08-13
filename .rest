@@ -7,10 +7,16 @@
 #   "password": "d00103f1b0a29afffdab"
 # }
 
-POST http://localhost:7001/u/auth/
-Content-Type: application/json 
 
-{
-  "username": "admin",
-  "password": "d00103f1b0a29afffdab"
-}
+# POST http://localhost:7001/u/auth/signin
+# Content-Type: application/json 
+
+# {
+#   "email": "da40au40@gmail.com",
+#   "password": "123456"
+# }
+
+# POST http://localhost:7001/u/invite
+# Content-Type: application/json
+# pass: NzY0MzAzMi4xNDNlMzU2MTIxZjU1NmU5NjcwLjRkNmQzNjYwNjA0MTc3MzRiMDc1NjM2YzE0NjYzZTIzOS0tLS0tMzc2OTM2NDYzMDExMzRlZmJmYmQ3M2VmYmZiZDJlMjVlZmJmYmQ0YjM3NWFlZmJmYmQzMjMzMzY2MjMyM2YzNTM0MzEzM2VmYmZiZGVmYmZiZGVmYmZiZGVmYmZiZDRmMzU=
+

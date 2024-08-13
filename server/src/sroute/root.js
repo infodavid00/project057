@@ -1,6 +1,6 @@
 import express from "express";
 import error from "../etc/error.js";
-import { login, verifyCredentials } from "../kernel/auth/admin.js";
+import { login, verifyCredentials, signout } from "../kernel/auth/admin.js";
 import support from "./support.js";
 import reports from "./reports.js";
 
@@ -13,6 +13,7 @@ sroot.get("/verify", verifyCredentials, (req, res) => {
   res.status(200).send("OK");
 });
 sroot.post("/auth", login);
+sroot.post("/auth/signout", signout);
 
 sroot.use("/support", support);
 sroot.use("/reports", reports);

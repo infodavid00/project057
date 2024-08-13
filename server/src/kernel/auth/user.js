@@ -115,7 +115,7 @@ export async function signin(request, response) {
            let tokenId = `${Date.now()}.${randomBytes(20)}`;
            tokenId = Buffer.from(scrambler(tokenId)).toString("hex");
            tokenId = `${userWithEmail._id}-----${tokenId}`;
-           await db.updateOne(
+           await users.updateOne(
              {_id: userWithEmail._id}, 
              {$set: { 
                AUTH_CURRENT_LOGIN_TOKEN: tokenId,
@@ -163,6 +163,27 @@ export async function verifyCredentials(request, response, next) {
       const message = ["Cannot process request", "Token required"];
       response.status(400).json(bad(...message));
     }
+  } catch (error) {
+    response.status(500).json(bad("Internal server error", error.message));
+  }
+}
+
+
+export async function signout(request, response) {
+  try {
+    let token = request.headers?.pass;
+    token = atob(token);
+    let _id = token.split("-----");
+    _id = _id[0];
+    const users = dbConnect().dataset("users");
+    await users.updateOne(
+      {_id}, 
+      {$set: { 
+          AUTH_CURRENT_LOGIN_TOKEN: null,
+          AUTH_CURRENT_LOGIN_AT: null
+      }},
+    );
+    response.status(200).json(ok("ok"));
   } catch (error) {
     response.status(500).json(bad("Internal server error", error.message));
   }
