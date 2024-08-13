@@ -1,0 +1,11 @@
+
+# POST http://localhost:7001/su/auth
+# Content-Type: application/json 
+
+# {
+#   "username": "admin",
+#   "password": "d00103f1b0a29afffdab"
+# }
+
+
+# CLIENT NEEDS HIGHLY STABLE INTERNET CONNECTION TO UPLOAD REPORTS USING THE ADMIN PANEL, 

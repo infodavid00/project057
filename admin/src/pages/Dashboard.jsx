@@ -6,9 +6,9 @@ import Main from "../comps/main/Main";
 
 
 export default function Dashboard() {
-  const [isVerified, setisVerified] = useState(true);
+  const [isVerified, setisVerified] = useState(false);
   useEffect(()=> {
-     //verify(setisVerified);
+    verify(setisVerified);
   }, []);
   if (isVerified === true) {
     return (
