@@ -13,9 +13,9 @@ export async function getNews(_, response) {
 
 export async function updateNewsViews(request, response) {
   try {
-    const { id } = request.params;
+    const { id: ID } = request.params;
     const news = dbConnect().dataset("_news");
-    await news.updateOne({ _id: id }, {
+    await news.updateOne({ _id: ID }, {
         $inc: { views: 1}
     });
     response.status(200).json(ok("ok"));

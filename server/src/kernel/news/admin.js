@@ -8,7 +8,7 @@ export async function postNews(request, response) {
       const news = dbConnect().dataset("_news");
       const newsStats = dbConnect().dataset("_su");
       await news.insertOne({ 
-         _id: Date.now(),
+         _id: String(Date.now()),
         headline: payload.headline,
         content: payload.content,
         date: Date.now(),

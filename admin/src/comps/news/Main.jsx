@@ -35,13 +35,13 @@ export default function Main() {
 
         const data = await response.json();
         if (!response.ok) {
-          toast.error(data.message || "An error occurred while fetching news stats.");
+          //toast.error(data.message || "An error occurred while fetching news stats.");
           setNewsCount(0);
         } else {
           setNewsCount(data.data.len || 0); 
         }
       } catch (error) {
-        toast.error("An unexpected error occurred while fetching news stats.");
+        //toast.error("An unexpected error occurred while fetching news stats.");
         setNewsCount(0);
       }
     };

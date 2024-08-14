@@ -1,8 +1,8 @@
 import "./dashboard.css";
 
 export default function TopContributors() {
-  const contributors = [
-    {
+    /* const contributors = [
+  {
       image:
         "https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2244&q=80",
       username: "Jane Doe",
@@ -61,7 +61,27 @@ export default function TopContributors() {
       username: "Kell's Mom",
       points: 22,
     },
-  ];
+  ]; */
+  const contributors = [
+        {
+      image:
+        "https://react-horizon-ui-chakra.appseed-srv1.com/static/media/Nft3.3b3e6a4b3ada7618de6c.png",
+      username: "Dan's Dad",
+      points: 78,
+    },
+    {
+      image:
+        "https://react-horizon-ui-chakra.appseed-srv1.com/static/media/Nft1.0fea34cca5aed6cad72b.png",
+      username: "Dan's Friend",
+      points: 36,
+    },
+    {
+      image:
+        "https://react-horizon-ui-chakra.appseed-srv1.com/static/media/avatar1.eeef2af6dfcd3ff23cb8.png",
+      username: "Kell Noname",
+      points: 34,
+    },
+  ]
   return (
     <div
       className="dashboard-charts-box dashboard-charts-box-scrollable"

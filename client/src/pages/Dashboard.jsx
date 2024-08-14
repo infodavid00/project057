@@ -72,7 +72,7 @@ export default function Dashboard() {
           </div>
           {/* second section */}
 
-          <div id="dashboard-sectionA-body" style={{ marginTop: "0em" }}>
+          <div id="dashboard-sectionA-body" style={{ marginTop: "0em", alignItems: "flex-start" }}>
             <TopContributors />
             <News />
           </div>
