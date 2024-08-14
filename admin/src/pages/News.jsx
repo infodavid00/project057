@@ -5,9 +5,9 @@ import Sidepanel from "../comps/sidepanel/Sidepanel";
 import Main from "../comps/news/Main";
 
 export default function News() {
-  const [isVerified, setisVerified] = useState(true);
+  const [isVerified, setisVerified] = useState(false);
   useEffect(()=> {
-     //verify(setisVerified);
+     verify(setisVerified);
   }, []);
   if (isVerified === true) {
     return (
