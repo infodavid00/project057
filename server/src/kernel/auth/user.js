@@ -61,7 +61,8 @@ export async function signup(request, response) {
                      // register the user
                      await users.insertOne(userInfo);
 
-                     // update the referer's refered field and add this user.
+                     // update the referer's refered field, adding this user and.
+                     // increament the registration
                      if (userWasRefered) {
                         await users.updateOne(
                            { inviteId: userWasRefered.iid },
