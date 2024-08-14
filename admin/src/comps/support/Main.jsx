@@ -78,7 +78,7 @@ export default function Main() {
     }
 
     try {
-      const response = await fetch(`${BaseEndpoint}/support?size=10&page=${paginationIndex}`, {
+      const response = await fetch(`${BaseEndpoint}/support?size=50&page=${paginationIndex}`, {
         method: 'GET',
         headers: {
           'Pass': `${btoa(token)}`,
