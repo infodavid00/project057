@@ -6,6 +6,7 @@ import root from "./route/root.js";
 import sroot from "./sroute/root.js";
 import { dbConnect } from "./store/connections.js";
 import removeLogsFromInvitePool from "./etc/removeLogsFromInvitePool.js";
+import sync from "./kernel/reports/sync.js";
 
 dotenv.config();
 
@@ -28,6 +29,8 @@ dbConnect(process.env.DBKEY)
       //appx 27 hours interval the +3 hours is to ensure some records created close
       //to the next day eg an hour or few minutes to the next day, are not 
       //deleted prematurely.
+      setInterval(async () => await sync(), 3000)
+      // appx after every 3 seconds: should be 30 mins on prod
     });
   })
   .catch((error) => {

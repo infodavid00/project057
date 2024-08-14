@@ -41,6 +41,7 @@ export async function signup(request, response) {
                         firstName: payload.fname,
                         lastName: payload.lname,
                         email: payload.email,
+                        mt4: payload.mt4,
                         password,
                         refered: [],
                         referer: null
@@ -191,3 +192,5 @@ export async function signout(request, response) {
     response.status(500).json(bad("Internal server error", error.message));
   }
 }
+
+
