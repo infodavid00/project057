@@ -94,7 +94,7 @@ export default async function sync() {
    }
    console.log(`COMPLETED SYNC ${new Date()}`);
    console.log(`REPORT : ${usersNotRecorderd} users have signed up via refereral but havent deposited.`);
-   console.log(`REPORT : ${usersRecorderdDuringThisSync} users during this sync has finaly deposited and has beign recorded.`);
+   console.log(`REPORT : ${usersRecorderdDuringThisSync} users during this sync has finaly deposited and has beign recorded. \n\n`);
  } catch (error) {
    console.log(`ERROR DURING SYNC ${new Date()}, REPORT : ${error.message}`);
  }
