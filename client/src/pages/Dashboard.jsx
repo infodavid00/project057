@@ -51,17 +51,6 @@ export default function Dashboard() {
             <div className="dashboard-sectionA-container dashboard-sectionA-container-flexed2">
               <div className="dashboard-sectionA-container-title">Deposits</div>
               <div className="dashboard-sectionA-container-amount">€574.34</div>
-              <div className="dashboard-sectionA-container-slm">
-                <span
-                  style={{
-                    color: "rgb(1, 181, 116)",
-                    fontFamily: "poppins-semiBold",
-                  }}
-                >
-                  +23%
-                </span>{" "}
-                since last month
-              </div>
             </div>
           </div>
           {/* first section */}

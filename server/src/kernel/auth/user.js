@@ -65,7 +65,7 @@ export async function signup(request, response) {
                      if (userWasRefered) {
                         await users.updateOne(
                            { inviteId: userWasRefered.iid },
-                           { $push: { refered: _id } }
+                           { $push: { refered: _id }, $inc: { registration: 1  } }
                         );
                       } 
                      response.status(200).json(ok("ok", ""));
