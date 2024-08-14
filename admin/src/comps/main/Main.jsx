@@ -28,49 +28,49 @@ export default function Main() {
 
   useEffect(() => {
     if (loadHeader !== false) {
-    const fetchStats = async () => {
-      setIsLoading(true);
-      try {
-        const token = Cookies.get(tokenVault);
-        const response = await fetch(`${BaseEndpoint}/reports/stats`, {
-          method: "GET",
-          headers: {
-            Pass: `${btoa(token)}`,
-            "Content-Type": "application/json",
-          },
-        });
-
-        if (response.status === 200) {
-          const result = await response.json();
-          let lastUpdateFormatted = "never";
-          if (result?.data?.lu) {
-            const lastUpdateDate = new Date(result.data.lu);
-            lastUpdateFormatted = lastUpdateDate.toLocaleString("en-GB", {
-               day: "2-digit",
-               month: "short",
-               year: "numeric",
-               hour: "2-digit",
-               minute: "2-digit",
-            });
-          }
-          setReportsStats({
-            shownReports: 0,
-            totalReports: result?.data?.len || 0,
-            lastUpdate: lastUpdateFormatted
+      const fetchStats = async () => {
+        setIsLoading(true);
+        try {
+          const token = Cookies.get(tokenVault);
+          const response = await fetch(`${BaseEndpoint}/reports/stats`, {
+            method: "GET",
+            headers: {
+              Pass: btoa(token),
+              "Content-Type": "application/json",
+            },
           });
-          setDataLoaded(true);
-        } else {
-          toast.error("Failed to fetch report stats.");
-        }
-      } catch (error) {
-        toast.error("An unexpected error occurred while fetching stats.");
-      } finally {
-        setIsLoading(false);
-        shouldloadHeader(false)
-      }
-    };
 
-    fetchStats();
+          if (response.status === 200) {
+            const result = await response.json();
+            let lastUpdateFormatted = "never";
+            if (result?.data?.lu) {
+              const lastUpdateDate = new Date(result.data.lu);
+              lastUpdateFormatted = lastUpdateDate.toLocaleString("en-GB", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+              });
+            }
+            setReportsStats({
+              shownReports: 0,
+              totalReports: result?.data?.len || 0,
+              lastUpdate: lastUpdateFormatted,
+            });
+            setDataLoaded(true);
+          } else {
+            toast.error("Failed to fetch report stats.");
+          }
+        } catch (error) {
+          toast.error("An unexpected error occurred while fetching stats.");
+        } finally {
+          setIsLoading(false);
+          shouldloadHeader(false);
+        }
+      };
+
+      fetchStats();
     }
   }, []);
 
@@ -88,21 +88,25 @@ export default function Main() {
         let json = XLSX.utils.sheet_to_json(worksheet);
 
         json = json.map((item) => {
-         if (item["ADDITIONAL USERID"]) {
-          const splitValue = item["ADDITIONAL USERID"].split(":")[1]?.trim();
-          item["mt4"] = splitValue || item["ADDITIONAL USERID"];
-          if (item["mt4"].includes(",")) {
-            item["mt4"] = item["mt4"].split(",")[0]; 
-          }
+          // Handling 'ADDITIONAL USERID' field
+          if (item["ADDITIONAL USERID"]) {
+            const splitValue = item["ADDITIONAL USERID"].split(":")[1]?.trim();
+            item["mt4"] = splitValue || item["ADDITIONAL USERID"];
+            if (item["mt4"].includes(",")) {
+              item["mt4"] = item["mt4"].split(",")[0];
+            }
             delete item["ADDITIONAL USERID"];
-         }
-         return item;
-        });
-        json = json.map((item) => {
-          const i = item;
-          if ((item["mt4"] ?? "").includes(","))
-            i["mt4"] = item["mt4"].split(",")[0].trim()
-          return i
+          }
+
+          // Converting Excel date format to readable date format
+          if (item["Registration Date"] && typeof item["Registration Date"] === "number") {
+            const date = new Date((item["Registration Date"] - (25567 + 1)) * 86400 * 1000);
+            item["Registration Date"] = date.toISOString().slice(0, 19).replace("T", " ");
+          } else {
+            item["Registration Date"] = String(item["Registration Date"]);
+          }
+
+          return item;
         });
 
         toast.success("File successfully converted to JSON!");
@@ -114,7 +118,7 @@ export default function Main() {
           const response = await fetch(`${BaseEndpoint}/reports`, {
             method: "POST",
             headers: {
-              Pass: `${btoa(token)}`,
+              Pass: btoa(token),
               "Content-Type": "application/json",
             },
             body: JSON.stringify(json),
@@ -135,7 +139,7 @@ export default function Main() {
         } catch (error) {
           toast.error("An unexpected error occurred. Please try again later.");
           setIsLoading(false); // Stop the loader on error
-        } 
+        }
       };
 
       reader.readAsArrayBuffer(file);
@@ -152,12 +156,12 @@ export default function Main() {
     }
     if (paginationIndex !== 0) {
       setLoadingMoreReports(true);
-    } 
+    }
     try {
       const response = await fetch(`${BaseEndpoint}/reports?size=50&page=${paginationIndex}`, {
         method: 'GET',
         headers: {
-          'Pass': `${btoa(token)}`,
+          'Pass': btoa(token),
           'Content-Type': 'application/json',
         },
       });
@@ -168,9 +172,9 @@ export default function Main() {
         if (Array.isArray(data)) {
           setPaginationIndex(paginationIndex + 1);
           const newReportStats = {
-              totalReports: reportsStats.totalReports, 
-              lastUpdate: reportsStats.lastUpdate
-          }
+            totalReports: reportsStats.totalReports,
+            lastUpdate: reportsStats.lastUpdate,
+          };
           newReportStats.shownReports = Array.isArray(reports) ? reports.length + data.length : data.length;
           setReportsStats(newReportStats);
           if (paginationIndex === 0) {
@@ -190,11 +194,11 @@ export default function Main() {
     }
   };
 
-  useEffect(()=> {
+  useEffect(() => {
     if (loadHeader === false && reportsStats?.totalReports > 0) {
       fetchReports();
-    } else setReports("N")
-  }, [loadHeader])
+    } else setReports("N");
+  }, [loadHeader]);
 
   return (
     <>
@@ -213,7 +217,7 @@ export default function Main() {
                     Last update at{" "}
                     {reportsStats.lastUpdate === "never"
                       ? "never"
-                      : `${reportsStats.lastUpdate}`}
+                      : reportsStats.lastUpdate}
                   </div>
                   <button
                     style={{
@@ -243,44 +247,50 @@ export default function Main() {
             </div>
 
             <div id="reports-table">
-              {reports && Array.isArray(reports) ?
-               <table id="reports-table-container">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>MT4</th>
-                    <th>First Deposit</th>
-                    <th>FDD</th>
-                    <th>Deposits</th>
-                    <th>Deposit Count</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {reports.map((element, index) => (
-                    <tr key={index}>
-                      <td>{element["User ID"]}</td>
-                      <td>{element["Customer Name"]}</td>
-                      <td>{element["mt4"]}</td>
-                      <td>€{element["First Deposit"]}</td>
-                      <td>{element["First Deposit Date"] ? dayjs(new Date("First Deposit Date")).fromNow() :  "never"}</td>
-                      <td>€{element["Deposits"]}</td>
-                      <td>{element["Deposit Count"]}</td>
+              {reports && Array.isArray(reports) ? (
+                <table id="reports-table-container">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>MT4</th>
+                      <th>First Deposit</th>
+                      <th>FDD</th>
+                      <th>RD</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table> : reportsStats.totalReports === 0  ? (
-                <div style={{ fontFamily: "poppins", marginTop: "2em"}}>No reports to show </div>
+                  </thead>
+                  <tbody>
+                    {reports.map((element, index) => (
+                      <tr key={index}>
+                        <td>{element["User ID"]}</td>
+                        <td>{element["Customer Name"]}</td>
+                        <td>{element["mt4"]}</td>
+                        <td>€{element["First Deposit"]}</td>
+                        <td>{element["First Deposit Date"] ?? "never"}</td>
+                        <td>{element["Registration Date"]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               ) : (
-                <div style={{ marginTop: "2em", display: "flex",  justifyContent: "center", marginRight: "10em" }}>
-                  <TailSpin height="20" width="20" color="white" />
+                <div>
+                  {isLoading ? (
+                    <TailSpin height="100" width="100" color="var(--primary)" />
+                  ) : (
+                    "No data to display"
+                  )}
+                </div>
+              )}
+              {loadingMoreReports && (
+                <div className="loading-more-reports">
+                  <TailSpin height="30" width="30" color="var(--primary)" />
                 </div>
               )}
             </div>
           </div>
         </div>
+        <ToastContainer />
       </div>
-      <ToastContainer />
     </>
   );
 }

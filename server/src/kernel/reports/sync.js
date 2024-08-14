@@ -24,6 +24,7 @@ export default async function sync() {
               mt4: element.mt4,
               "First Deposit": { $gt: 1 } 
           });
+          console.log(report);
           //IF REPORT THEN IT MEANS THIS USER HAS DEPOSITED BUT HAS NOT BEIGN
           //RECORDED    
           if (report) {
@@ -86,6 +87,9 @@ export default async function sync() {
                 )
               }
 
+              // update user :
+              await users.updateOne({ _id: element._id }, { $set: { isRecorded: true } });
+              
               //REMOVE ALL THIS USER LOGS FROM THE IRPL DATASET 
               await internalReportLogs.deleteMany({ mt4: element.mt4 });
           }
@@ -93,7 +97,7 @@ export default async function sync() {
      });
    }
    console.log(`COMPLETED SYNC ${new Date()}`);
-   console.log(`REPORT : ${usersNotRecorderd} users have signed up via refereral but havent deposited.`);
+   console.log(`REPORT : ${usersNotRecorderd} users have signed up via refereral but havent been updated(points, commisions).`);
    console.log(`REPORT : ${usersRecorderdDuringThisSync} users during this sync has finaly deposited and has beign recorded. \n\n`);
  } catch (error) {
    console.log(`ERROR DURING SYNC ${new Date()}, REPORT : ${error.message}`);
