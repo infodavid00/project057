@@ -97,14 +97,15 @@ export default function Main() {
             }
             delete item["ADDITIONAL USERID"];
           }
+   
+         if (item["Registration Date"] && typeof item["Registration Date"] === "number") {
+          const date = new Date((item["Registration Date"] - (25567 + 1)) * 86400 * 1000);
+          date.setDate(date.getDate() - 1); // Adjusting for the Excel leap year bug
+          item["Registration Date"] = date.toISOString().slice(0, 19).replace("T", " ");
+        } else {
+          item["Registration Date"] = String(item["Registration Date"]);
+         }
 
-          // Converting Excel date format to readable date format
-          if (item["Registration Date"] && typeof item["Registration Date"] === "number") {
-            const date = new Date((item["Registration Date"] - (25567 + 1)) * 86400 * 1000);
-            item["Registration Date"] = date.toISOString().slice(0, 19).replace("T", " ");
-          } else {
-            item["Registration Date"] = String(item["Registration Date"]);
-          }
 
           return item;
         });
@@ -277,7 +278,7 @@ export default function Main() {
                   {isLoading ? (
                     <TailSpin height="100" width="100" color="var(--primary)" />
                   ) : (
-                    "No data to display"
+                    <div style={{ marginTop: "2em", fontFamily: "poppins" }}>No reports to display</div>
                   )}
                 </div>
               )}
