@@ -52,8 +52,8 @@ export default async function sync() {
               }
 
               //update referer:
-              await users.updateOne(
-                { inviteId: referedUsers.referer },
+              const pointsWasUpdated = await users.updateOne(
+                { inviteId: element.referer },
                 {
                   $inc: {
                      points: point,
@@ -75,7 +75,7 @@ export default async function sync() {
 
               // update inviter's inviter
               const inviter = await users.findOne(
-                 { inviteId: referedUsers.referer },
+                 { inviteId: element.referer },
                  { projection: { referer: 1 } }
               )
               const invitersInviter = inviter?.referer;
@@ -87,10 +87,12 @@ export default async function sync() {
               }
 
               // update user :
-              await users.updateOne({ _id: element._id }, { $set: { isRecorded: true } });
-              
-              //REMOVE ALL THIS USER LOGS FROM THE IRPL DATASET 
-              await internalReportLogs.deleteMany({ mt4: element.mt4 });
+              if (pointsWasUpdated.modifiedCount === 1) {
+                await users.updateOne({ _id: element._id }, { $set: { isRecorded: true } });
+
+               //REMOVE ALL THIS USER LOGS FROM THE IRPL DATASET 
+                await internalReportLogs.deleteMany({ mt4: element.mt4 });
+              }
           }
         }  
      });
