@@ -1,87 +1,24 @@
+import { useState, useEffect } from "react";
+import { TailSpin } from 'react-loader-spinner';
 import "./dashboard.css";
+import { makeRequest } from "../../etc/network";
 
 export default function TopContributors() {
-    /* const contributors = [
-  {
-      image:
-        "https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2244&q=80",
-      username: "Jane Doe",
-      points: 70,
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80",
-      username: "Jane's Brother",
-      points: 50,
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1573766064535-6d5d4e62bf9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1315&q=80",
-      username: "Jane's Cousin",
-      points: 72,
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80",
-      username: "Jane's Stepmom",
-      points: 36,
-    },
-    {
-      image: "https://i.ibb.co/7p0d1Cd/Frame-24.png",
-      username: "Dan Nooki",
-      points: 63,
-    },
-    {
-      image:
-        "https://react-horizon-ui-chakra.appseed-srv1.com/static/media/Nft2.7897c45d2601ee3adfb5.png",
-      username: "One Man",
-      points: 61,
-    },
-    {
-      image:
-        "https://react-horizon-ui-chakra.appseed-srv1.com/static/media/Nft3.3b3e6a4b3ada7618de6c.png",
-      username: "Dan's Dad",
-      points: 78,
-    },
-    {
-      image:
-        "https://react-horizon-ui-chakra.appseed-srv1.com/static/media/Nft1.0fea34cca5aed6cad72b.png",
-      username: "Dan's Friend",
-      points: 36,
-    },
-    {
-      image:
-        "https://react-horizon-ui-chakra.appseed-srv1.com/static/media/avatar1.eeef2af6dfcd3ff23cb8.png",
-      username: "Kell Noname",
-      points: 34,
-    },
-    {
-      image:
-        "https://react-horizon-ui-chakra.appseed-srv1.com/static/media/avatar3.9f646ac5920fa40adf00.png",
-      username: "Kell's Mom",
-      points: 22,
-    },
-  ]; */
-  const contributors = [
-        {
-      image:
-        "https://react-horizon-ui-chakra.appseed-srv1.com/static/media/Nft3.3b3e6a4b3ada7618de6c.png",
-      username: "Dan's Dad",
-      points: 78,
-    },
-    {
-      image:
-        "https://react-horizon-ui-chakra.appseed-srv1.com/static/media/Nft1.0fea34cca5aed6cad72b.png",
-      username: "Dan's Friend",
-      points: 36,
-    },
-    {
-      image:
-        "https://react-horizon-ui-chakra.appseed-srv1.com/static/media/avatar1.eeef2af6dfcd3ff23cb8.png",
-      username: "Kell Noname",
-      points: 34,
-    },
-  ]
+  const [contributors, setContributors] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    makeRequest("/user/contributors", "GET", (response) => {
+      // Ensure that the response is an array, even if the request fails
+      setContributors(Array.isArray(response) ? response : []);
+      setLoading(false);
+    }, () => {
+      // Handle request error here
+      setContributors([]); // Set to an empty array on error
+      setLoading(false);
+    });
+  }, []);
+
   return (
     <div
       className="dashboard-charts-box dashboard-charts-box-scrollable"
@@ -94,29 +31,34 @@ export default function TopContributors() {
           <div id="dashboard-topcontrib-headers-headers2">USERNAME</div>
           <div id="dashboard-topcontrib-headers-headers3">POINTS</div>
         </div>
-        {contributors.map((element, index) => (
-          <div key={index} className="dashboard-topcontrib-body">
-            <div className="dashboard-topcontrib-body-namespace-contrib">
-              {index + 1}
-            </div>
-            <div className="dashboard-topcontrib-body-namespace">
-              <img
-                src={element.image}
-                className="dashboard-topcontrib-body-namespace-profile"
-              />
-              {element.username}
-            </div>
-            <div className="dashboard-topcontrib-body-namespace-rating">
-              {/* <div
-                className="dashboard-topcontrib-body-namespace-rating-inner"
-                style={{
-                  width: `${element.rating}%`,
-                }}
-              ></div> */}
-              {element.points}
-            </div>
+        {loading ? (
+          <div style={{ textAlign: "center", marginTop: "2em" }}>
+            <TailSpin width={30} height={30} />
           </div>
-        ))}
+        ) : contributors.length > 0 ? (
+          contributors.map((element, index) => (
+            <div key={index} className="dashboard-topcontrib-body">
+              <div className="dashboard-topcontrib-body-namespace-contrib">
+                {index + 1}
+              </div>
+              <div className="dashboard-topcontrib-body-namespace">
+                <img
+                  src={element.profile ??  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG-5Wi8qZXluHi11q-AHGh8riznXRoltGVYQ&s"}
+                  className="dashboard-topcontrib-body-namespace-profile"
+                  alt={`${element.username}'s profile`}
+                />
+                {element.firstName} {element.lastName}
+              </div>
+              <div className="dashboard-topcontrib-body-namespace-rating">
+                {element.points ?? 0}
+              </div>
+            </div>
+          ))
+        ) : (
+          <div style={{ textAlign: "center", marginTop: "2em" }}>
+            No contributors found.
+          </div>
+        )}
       </div>
     </div>
   );

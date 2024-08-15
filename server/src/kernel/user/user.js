@@ -35,3 +35,19 @@ export async function updateProfileImage(request, response) {
 }
 
 
+export async function getTopContributors(_, response) {
+  try {
+    const users = dbConnect().dataset("users");
+    const top = await users.find({}, {
+      projection: {
+        profile: 1 ,
+        points: 1,
+        firstName: 1,
+        lastName: 1
+      }
+    }).sort({ points: -1 }).limit(10).toArray();
+    response.status(200).json(ok("ok", top));
+  } catch (error) {
+    response.status(500).json(bad("Internal server error", error.message));
+  }
+}
