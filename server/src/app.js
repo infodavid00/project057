@@ -29,8 +29,8 @@ dbConnect(process.env.DBKEY)
       //appx 27 hours interval the +3 hours is to ensure some records created close
       //to the next day eg an hour or few minutes to the next day, are not 
       //deleted prematurely.
-      setInterval(async () => await sync(), 600000)
-      // appx after every 600k ms (10 minutes)
+      setInterval(async () => await sync(), 5000)
+      // appx after every 600000 ms (10 minutes)
     });
   })
   .catch((error) => {
