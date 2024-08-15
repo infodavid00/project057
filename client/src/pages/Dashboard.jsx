@@ -32,6 +32,7 @@ export default function Dashboard() {
     });
   }, []);
 
+
   return (
     <>
       <Sidepanel
@@ -86,8 +87,8 @@ export default function Dashboard() {
           {/* first section */}
 
           <div id="dashboard-sectionA-body" style={{ marginTop: "0em" }}>
-            <TotalSpent />
-            <WeeklyRevenue />
+            <TotalSpent information={data?.referedINFO ?? []} />
+            <WeeklyRevenue information={data?.refered ?? []} />
           </div>
           {/* second section */}
 

@@ -51,3 +51,18 @@ export async function getTopContributors(_, response) {
     response.status(500).json(bad("Internal server error", error.message));
   }
 }
+
+export async function getUserRegInfo(request, response) {
+  try {
+    const { ids } = request.body;
+    if (ids && Array.isArray(ids)) {
+       const users = dbConnect().dataset("users");
+       const sets = await users.find({ _id: { $in: ids } }, {
+         projection: { isRecorded: 1, regDate: 1}
+       }).toArray();
+       response.status(200).json(ok("ok", sets));
+    } else response.status(400).json(bad("Cannot process request"));
+  } catch (error) {
+    response.status(500).json(bad("Internal server error", error.message));
+  }
+}

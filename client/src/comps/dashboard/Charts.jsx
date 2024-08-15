@@ -1,17 +1,24 @@
-export const barChartDataConsumption = [
-  {
-    name: "POINTS",
-    data: [200, 240, 90, 390, 320, 430, 400, 320, 380],
-  },
-  {
-    name: "REGISTRATION",
-    data: [300, 400, 199, 390, 320, 430, 400, 320, 380],
-  },
-  {
-    name: "DEPOSITS",
-    data: [300, 220, 209, 390, 320, 200, 400, 320, 380],
-  },
-];
+function getLastSixMonths() {
+    const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    const currentMonth = new Date().getMonth();
+    const lastSixMonths = [];
+    for (let i = 5; i >= 0; i--) {
+        let monthIndex = (currentMonth - i + 12) % 12;
+        lastSixMonths.push(monthNames[monthIndex]);
+    }
+    return lastSixMonths;
+}
+function getLastEightMonths() {
+    const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    const currentMonth = new Date().getMonth();
+    const lastEightMonths = [];
+    for (let i = 7; i >= 0; i--) {
+        let monthIndex = (currentMonth - i + 12) % 12;
+        lastEightMonths.push(monthNames[monthIndex]);
+    }
+    return lastEightMonths;
+}
+
 
 export const barChartOptionsConsumption = {
   chart: {
@@ -34,7 +41,7 @@ export const barChartOptionsConsumption = {
     theme: "dark",
   },
   xaxis: {
-    categories: ["5", "6", "7", "8", "9", "10", "11", "12", "13"],
+    categories: getLastEightMonths(),
     show: false,
     labels: {
       show: true,
@@ -101,17 +108,6 @@ export const barChartOptionsConsumption = {
   },
 };
 
-export const lineChartDataTotalSpent = [
-  {
-    name: "Profit",
-    data: [50, 64, 48, 66, 49, 68],
-  },
-  {
-    name: "Loss",
-    data: [30, 40, 24, 46, 20, 46],
-  },
-];
-
 export const lineChartOptionsTotalSpent = {
   chart: {
     toolbar: {
@@ -154,7 +150,7 @@ export const lineChartOptionsTotalSpent = {
   },
   xaxis: {
     type: "numeric",
-    categories: ["MAR", "APR", "MAY", "JUN", "JUL", "AUG"],
+    categories: getLastSixMonths(),
     labels: {
       style: {
         colors: "#A3AED0",

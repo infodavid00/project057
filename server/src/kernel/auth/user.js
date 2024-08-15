@@ -44,6 +44,7 @@ export async function signup(request, response) {
                         mt4: payload.mt4,
                         password,
                         refered: [],
+                        regDate: String(new Date()),
                         referer: null
                      }
 

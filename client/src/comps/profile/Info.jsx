@@ -9,6 +9,10 @@ import { BaseEndpoint, tokenVault } from "../../etc/network";
 import Cookies from 'js-cookie';
 
 export default function Info() {
+  function formatDate(date) {
+    const options = { month: 'short', day: '2-digit', year: 'numeric' };
+    return (new Date(date)).toLocaleDateString('en-US', options).replace(',', '');   
+  }
   const [info, setInfo] = useState(null); 
   const [loading, setLoading] = useState(true);
   const [imagePreview, setImagePreview] = useState(''); // Start with an empty string for no image
@@ -134,6 +138,7 @@ export default function Info() {
           </div>
           <h2 id="profile-info-name">{info.firstName + " " + info.lastName}</h2>
           <div className="profile-info-metainfo">{info.email}</div>
+          <div className="profile-info-metainfo">Joined {formatDate(info?.regDate)}</div>
 
           <div id="profile-info-credentials">
             <div>
