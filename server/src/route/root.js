@@ -4,6 +4,7 @@ import support from "./support.js";
 import auth from "./auth.js";
 import invite from "./invite.js";
 import news from "./news.js";
+import user from "./user.js";
 
 const root = express();
 
@@ -15,6 +16,7 @@ root.use("/support", support);
 root.use("/auth", auth);
 root.use("/invite", invite);
 root.use("/news", news);
+root.use("/user", user)
 
 root.use(error);
 

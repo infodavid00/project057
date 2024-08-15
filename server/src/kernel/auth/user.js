@@ -195,3 +195,28 @@ export async function signout(request, response) {
 }
 
 
+export async function changePassword(request, response) {
+  try {
+    const _id = request._id;
+    const payload = request.body;
+    if (payload.current && payload.new && payload.new.length >= 6) {
+      const users = dbConnect().dataset("users");
+      const user = await users.findOne({ _id });
+      if (user && await new Hash(payload.current).compare(user?.password)) {
+        const password = await new Hash(payload.new).sign();
+        await users.updateOne({ _id }, { $set: {password} })
+        response.status(200).json(ok("ok"));
+      } else {
+        const message = ["Incorrect password", "Invalid request body"];
+        response.status(400).json(bad(...message));
+      }
+    } else {
+      const message = ["Cannot process request", "Invalid request body"];
+      response.status(400).json(bad(...message));
+    }
+  } catch (error) {
+    response.status(500).json(bad("Internal server error", error.message));
+  }
+}
+
+
