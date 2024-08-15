@@ -16,3 +16,22 @@ export async function getInfo(request, response) {
     response.status(500).json(bad("Internal server error", error.message));
   }
 }
+
+export async function updateProfileImage(request, response) {
+  try {
+    const _id = request._id;
+    const { url } = request.body;
+    if (url) {
+      const users = dbConnect().dataset("users");
+      await users.updateOne({ _id }, { $set: { profile: url }});
+      response.status(200).json(ok("ok"));
+    } else {
+      const message = ["Cannot process request", "Invalid request body"];
+      response.status(400).json(bad(...message));
+    }
+  } catch (error) {
+    response.status(500).json(bad("Internal server error", error.message));
+  }
+}
+
+

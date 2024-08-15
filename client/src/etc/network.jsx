@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
 
-export const BaseEndpoint = "http://localhost:7001/u";
+export const BaseEndpoint = "http://localhost:8001/u";
 export const tokenVault = "HBSUNEWFJ0WJ";
 
 export const makeRequest = async(endpoint, method, state, payload) => {
