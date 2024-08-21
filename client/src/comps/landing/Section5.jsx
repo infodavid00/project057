@@ -1,5 +1,5 @@
 import "./landing.css";
-import Section5Banner from "../../assets/images/section5.png";
+import Section5Banner from "../../assets/landing/1.png";
 
 export default function Section5() {
   return (

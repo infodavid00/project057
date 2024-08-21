@@ -1,6 +1,6 @@
 import "./landing.css";
 import { Link } from "react-router-dom";
-import section3banner from "../../assets/images/section3banner.png";
+import section3banner from "../../assets/landing/2.png";
 import Checkmark from "../../assets/svgs/checkmark.svg";
 
 export default function Section3() {
@@ -11,7 +11,7 @@ export default function Section3() {
           <div>
              <div id="landing-section3-inner-title">Plan Your Financial Success</div>
              <div className="landing-section3-inner-listscont">
-               <img src={Checkmark} />
+               <img src={Checkmark}/>
                <div>Learn to invest in ETFs, stocks, funds, and crypto with our trading courses, suitable for all levels.
                </div>
              </div>

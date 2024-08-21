@@ -7,6 +7,7 @@
   width: 88%;
   margin: auto;
   margin-top: 8em;
+  margin-bottom: 1.5em;
 }
 #landing-leadcontainer img {
   width: 400px;
@@ -105,6 +106,9 @@
   margin-top: 1em;
   margin-bottom: 2em;
   margin-left: 0.5em;
+}
+#landing-section3-inner-banner {
+  object-fit: contain;
 }
 .landing-section3-inner-listscont div {
   font-family: "poppins", sans-serif;

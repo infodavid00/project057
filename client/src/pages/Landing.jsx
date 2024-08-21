@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../comps/header/Header";
 import "../comps/landing/landing.css";
-import BannerImage from "../assets/images/homebanner.png";
+import BannerImage from "../assets/landing/4.png";
 import Leadinfo from "../comps/landing/Leadinfo";
 import Section3 from "../comps/landing/Section3";
 import Section4 from "../comps/landing/Section4";
