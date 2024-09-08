@@ -32,7 +32,7 @@ export default function Landing() {
                 Become a successful trader with our advanced programs.
               </div>
               <button id="landing-leadcontainer-btn">
-               <Link  to="/dashboard">Explore our services</Link>
+               <Link  to="/bot">Explore our services</Link>
               </button>
             </div>
             <img src={BannerImage} />
