@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
 
+//export const BaseEndpoint = "http://localhost:8001/u";
 export const BaseEndpoint = "https://wolfx.onrender.com/u";
 export const tokenVault = "HBSUNEWFJ0WJ";
 
